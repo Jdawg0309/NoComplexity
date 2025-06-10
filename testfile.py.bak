@@ -1,0 +1,94 @@
+import pygame  # Import the pygame library for creating video games
+import sys  # Import the sys module for system-specific parameters and functions
+import random  # Import the random module to generate random numbers
+
+def draw_snake(screen, snake_body, block_size):
+    """Draws the snake on the screen.
+    
+    Args:
+        screen: The display surface.
+        snake_body: List of positions [x, y] of the snake's body.
+        block_size: Size of each block of the snake's body.
+    """
+    for block in snake_body:  # Loop through each block in the snake's body
+        # Draw each block of the snake on the screen
+        pygame.draw.rect(screen, pygame.Color('green'), pygame.Rect(block[0], block[1], block_size, block_size))
+
+def main():
+    pygame.init()  # Initialize all imported pygame modules
+    screen_width, screen_height = 400, 300  # Set the dimensions of the game screen
+    screen = pygame.display.set_mode((screen_width, screen_height))  # Create a display window
+    pygame.display.set_caption("Snake Game")  # Set the title of the window
+    
+    clock = pygame.time.Clock()  # Create a clock object to manage updates
+    block_size = 10  # Define the size of each block of the snake
+    snake_pos = [100, 50]  # Initial position of the snake's head
+    snake_body = [[100, 50], [90, 50], [80, 50]]  # Initial body segments of the snake
+    # Generate a random position for the first food item
+    food_pos = [random.randrange(1, (screen_width//block_size)) * block_size,
+                random.randrange(1, (screen_height//block_size)) * block_size]
+    food_spawn = True  # Boolean to check if food is on the screen
+    direction = 'RIGHT'  # Initial movement direction of the snake
+    change_to = direction  # Variable to change the direction based on user input
+
+    while True:  # Game loop
+        for event in pygame.event.get():  # Event handling loop
+            if event.type == pygame.QUIT:  # Check for QUIT event
+                pygame.quit()  # Uninitialize all pygame modules
+                sys.exit()  # Terminate the program
+            elif event.type == pygame.KEYDOWN:  # Check for key presses
+                # Update direction based on the key pressed
+                if event.key == pygame.K_RIGHT:
+                    change_to = 'RIGHT'
+                if event.key == pygame.K_LEFT:
+                    change_to = 'LEFT'
+                if event.key == pygame.K_UP:
+                    change_to = 'UP'
+                if event.key == pygame.K_DOWN:
+                    change_to = 'DOWN'
+
+        # Update the direction if there is no direct opposite direction
+        if change_to == 'RIGHT' and not direction == 'LEFT':
+            direction = 'RIGHT'
+        if change_to == 'LEFT' and not direction == 'RIGHT':
+            direction = 'LEFT'
+        if change_to == 'UP' and not direction == 'DOWN':
+            direction = 'UP'
+        if change_to == 'DOWN' and not direction == 'UP':
+            direction = 'DOWN'
+
+        # Move the snake's head according to the direction
+        if direction == 'RIGHT':
+            snake_pos[0] += block_size
+        if direction == 'LEFT':
+            snake_pos[0] -= block_size
+        if direction == 'UP':
+            snake_pos[1] -= block_size
+        if direction == 'DOWN':
+            snake_pos[1] += block_size
+
+        # Insert new position to snake body
+        snake_body.insert(0, list(snake_pos))  # Insert new head position at the beginning of the snake body list
+        if snake_pos == food_pos:  # Check if the snake has eaten the food
+            food_spawn = False  # No need to spawn food if it's eaten
+        else:
+            snake_body.pop()  # Remove the last segment of the snake
+
+        # Spawn new food if the previous one was eaten
+        if not food_spawn:
+            # Generate a new food position
+            food_pos = [random.randrange(1, (screen_width//block_size)) * block_size,
+                        random.randrange(1, (screen_height//block_size)) * block_size]
+            food_spawn = True  # Set food spawn to True
+
+        # Drawing
+        screen.fill(pygame.Color('black'))  # Fill the screen with black
+        draw_snake(screen, snake_body, block_size)  # Draw the snake on the screen
+        # Draw the food
+        pygame.draw.rect(screen, pygame.Color('red'), pygame.Rect(food_pos[0], food_pos[1], block_size, block_size))
+
+        pygame.display.flip()  # Update the full display surface to the screen
+        clock.tick(10)  # Maintain a frame rate of 10 FPS
+
+if __name__ == "__main__":
+    main()  # Execute the main function if this file is run as a script

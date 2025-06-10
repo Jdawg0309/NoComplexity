@@ -1,0 +1,49 @@
+const board = document.getElementById('chessboard');
+const rows = 8;
+const cols = 8;
+const pieces = {
+    'p': '♟', 'r': '♜', 'n': '♞', 'b': '♝', 'q': '♛', 'k': '♚',
+    'P': '♙', 'R': '♖', 'N': '♘', 'B': '♗', 'Q': '♕', 'K': '♔'
+};
+
+// Initialize the chessboard
+function initBoard() {
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            const square = document.createElement('div');
+            square.className = (i + j) % 2 === 0 ? 'white' : 'black';
+            board.appendChild(square);
+        }
+    }
+}
+
+// Place pieces on the board
+function setupPieces() {
+    const initialPositions = [
+        "rnbqkbnr",
+        "pppppppp",
+        "        ",
+        "        ",
+        "        ",
+        "        ",
+        "PPPPPPPP",
+        "RNBQKBNR"
+    ];
+
+    for (let i = 0; i < initialPositions.length; i++) {
+        for (let j = 0; j < initialPositions[i].length; j++) {
+            const piece = initialPositions[i][j];
+            if (piece !== ' ') {
+                const square = board.children[i * cols + j];
+                const pieceElement = document.createElement('span');
+                pieceElement.className = 'piece';
+                pieceElement.textContent = pieces[piece];
+                square.appendChild(pieceElement);
+            }
+        }
+    }
+}
+
+// Initialize game
+initBoard();
+setupPieces();

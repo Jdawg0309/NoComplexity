@@ -1,0 +1,53 @@
+FILE: backend/app.py
+```python
+from flask import Flask, request, jsonify
+from memory.logger import log_memory
+
+app = Flask(__name__)
+
+@app.route('/api/assist', methods=['POST'])
+def assist():
+    user_query = request.json.get('query', '')
+    response = generate_response(user_query)
+    log_memory(user_query, response)
+    return jsonify({'response': response})
+
+def generate_response(query):
+    # Placeholder for AI response generation logic
+    return f"AI response to: {query}"
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)
+```
+
+FILE: memory/logger.py
+```python
+import datetime
+
+def log_memory(query, response):
+    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open('memory/log.txt', 'a') as file:
+        file.write(f"{timestamp} - Query: {query} - Response: {response}\n")
+```
+
+FILE: frontend/app.py
+```python
+import streamlit as st
+import requests
+
+st.title('AI Coding Assistant')
+
+user_input = st.text_input("Ask your coding question:")
+
+if st.button('Submit'):
+    response = requests.post('http://localhost:5000/api/assist', json={'query': user_input})
+    if response.status_code == 200:
+        st.write('AI Response:', response.json()['response'])
+    else:
+        st.error('Failed to get a response from the AI server.')
+```
+
+FILE: memory/log.txt
+```
+# This file will automatically be filled with log entries.
+```

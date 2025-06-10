@@ -1,0 +1,117 @@
+2025-06-07 22:48:21,206 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-06-07 22:50:00,215 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-06-07 22:50:46,859 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-06-07 22:54:19,937 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-06-07 22:54:19,939 - ERROR - ❌ Token limit exceeded: Error code: 400 - {'error': {'message': 'max_tokens is too large: 40000. This model supports at most 4096 completion tokens, whereas you provided 40000.', 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'invalid_value'}}
+2025-06-07 22:54:26,956 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-06-07 22:54:26,958 - ERROR - ❌ Token limit exceeded: Error code: 400 - {'error': {'message': 'max_tokens is too large: 40000. This model supports at most 4096 completion tokens, whereas you provided 40000.', 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'invalid_value'}}
+2025-06-07 22:54:27,627 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-06-07 22:54:27,628 - ERROR - ❌ Token limit exceeded: Error code: 400 - {'error': {'message': 'max_tokens is too large: 40000. This model supports at most 4096 completion tokens, whereas you provided 40000.', 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'invalid_value'}}
+2025-06-07 22:54:28,203 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-06-07 22:54:28,206 - ERROR - ❌ Token limit exceeded: Error code: 400 - {'error': {'message': 'max_tokens is too large: 40000. This model supports at most 4096 completion tokens, whereas you provided 40000.', 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'invalid_value'}}
+2025-06-07 22:54:29,003 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-06-07 22:54:29,004 - ERROR - ❌ Token limit exceeded: Error code: 400 - {'error': {'message': 'max_tokens is too large: 40000. This model supports at most 4096 completion tokens, whereas you provided 40000.', 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'invalid_value'}}
+2025-06-07 22:54:29,158 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-06-07 22:54:29,160 - ERROR - ❌ Token limit exceeded: Error code: 400 - {'error': {'message': 'max_tokens is too large: 40000. This model supports at most 4096 completion tokens, whereas you provided 40000.', 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'invalid_value'}}
+2025-06-07 22:54:30,817 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-06-07 22:54:30,819 - ERROR - ❌ Token limit exceeded: Error code: 400 - {'error': {'message': 'max_tokens is too large: 40000. This model supports at most 4096 completion tokens, whereas you provided 40000.', 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'invalid_value'}}
+2025-06-07 22:55:53,472 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-07 22:55:53,483 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/components/Navbar.js
+2025-06-07 22:59:49,400 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-07 22:59:49,404 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/components/Navbar.js
+2025-06-07 23:01:55,706 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-07 23:01:55,711 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/components/Navbar.js
+2025-06-07 23:02:17,000 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-07 23:02:17,005 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/components/Navbar.js
+2025-06-07 23:03:41,252 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-07 23:03:41,257 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/components/Navbar.js
+2025-06-07 23:05:12,052 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-07 23:05:12,057 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/components/Navbar.js
+2025-06-07 23:06:13,719 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-07 23:06:13,726 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/components/Navbar.js
+2025-06-07 23:07:16,257 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-07 23:07:16,269 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/components/Navbar.js
+2025-06-07 23:11:16,828 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-07 23:11:16,829 - WARNING - ⚠️ No code blocks found. Trying fallback parsing.
+2025-06-07 23:11:16,830 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/pages/Home.js
+2025-06-07 23:13:51,381 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-07 23:13:51,384 - WARNING - ⚠️ No code blocks found. Trying fallback parsing.
+2025-06-07 23:13:51,386 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/pages/Home.js
+2025-06-07 23:18:41,538 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-07 23:18:41,542 - WARNING - ⚠️ No code blocks found. Trying fallback parsing.
+2025-06-07 23:18:41,543 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/pages/Home.js
+2025-06-08 13:43:05,118 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-08 13:43:05,123 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/pages/Services.js
+2025-06-08 13:46:04,625 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-08 13:46:04,630 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/pages/Services.js
+2025-06-08 13:55:27,001 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-08 13:55:27,005 - WARNING - ⚠️ No code blocks found. Trying fallback parsing.
+2025-06-08 13:55:27,007 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/pages/Services.js
+2025-06-08 13:56:48,411 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-08 13:56:48,416 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/pages/Portfolio.js
+2025-06-08 14:01:13,004 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-08 14:01:13,009 - WARNING - ⚠️ No code blocks found. Trying fallback parsing.
+2025-06-08 14:01:13,011 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/pages/About.js
+2025-06-08 14:02:13,834 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-08 14:02:13,837 - WARNING - ⚠️ No code blocks found. Trying fallback parsing.
+2025-06-08 14:02:13,838 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/pages/About.js
+2025-06-08 14:21:03,174 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-08 14:21:03,177 - WARNING - ⚠️ No code blocks found. Trying fallback parsing.
+2025-06-08 14:21:03,179 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/pages/About.js
+2025-06-08 15:19:12,505 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-08 15:19:12,508 - WARNING - ⚠️ No update found for /home/junaet-mahbub/Desktop/ai-coder-bot/app.py. Keeping original.
+2025-06-08 15:19:12,510 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/app.py**
+2025-06-08 15:19:12,511 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/app.py
+2025-06-08 15:20:08,496 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-08 15:20:08,521 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/app.py
+2025-06-08 15:22:28,276 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-08 15:22:28,283 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/testfile.py
+2025-06-08 15:22:42,991 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-08 15:22:42,998 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/testfile.py
+2025-06-08 15:36:46,060 - ERROR - ❌ Empty upgrade instruction
+2025-06-08 15:36:46,061 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/testfile.py
+2025-06-08 15:36:59,486 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-08 15:36:59,492 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/testfile.py
+2025-06-08 15:38:01,231 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-08 15:38:01,240 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/testfile.py
+2025-06-08 15:38:18,846 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-08 15:38:18,852 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/testfile.py
+2025-06-08 15:39:08,919 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-08 15:39:08,926 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/testfile.py
+2025-06-08 15:39:31,956 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-08 15:39:31,964 - INFO - ✅ Updated /home/junaet-mahbub/Desktop/ai-coder-bot/testfile.py
+2025-06-09 21:16:57,581 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 21:23:48,855 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 21:24:58,405 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 21:28:47,033 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 21:43:04,801 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 21:47:24,701 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 21:52:55,817 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 22:40:08,689 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 22:50:58,087 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 22:52:21,166 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 22:53:18,520 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 22:53:24,820 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 22:53:33,135 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 22:57:37,532 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 22:57:43,816 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 22:57:54,455 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 22:58:02,769 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 22:58:11,709 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 22:58:14,484 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 22:58:16,059 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 22:58:18,394 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 22:58:20,883 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 22:58:23,441 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 23:01:00,430 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 23:01:03,695 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 23:01:06,689 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 23:01:09,550 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 23:03:43,122 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 23:05:36,354 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 23:06:59,284 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-09 23:09:18,637 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-10 03:12:58,432 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-10 03:15:13,946 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-10 03:17:44,613 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-10 03:19:59,726 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"

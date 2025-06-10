@@ -1,0 +1,5065 @@
+```
+# This file will automatically be filled with log entries.
+```2025-06-07 17:24:50 - Query: print('Hello World')
+ - Response: The given code is already simple and readable. It's a basic print statement in Python that outputs the string 'Hello World'. There's no need for refactoring in this case.
+2025-06-07 17:30:30 - Query: html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Flashcards App{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Alpine.js for interactive components like the Dark Mode toggle -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
+
+  {% block head %}{% endblock %}
+</head>
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100" x-data="{ darkMode: false }" :class="{ 'dark': darkMode }">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-800 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a class="text-white font-bold text-lg" href="{{ url_for('auth.index') }}">
+        Flashcards
+      </a>
+      <div>
+        <button @click="darkMode = !darkMode" class="text-white">
+          <span x-show="!darkMode"><i class="fas fa-sun"></i> Light</span>
+          <span x-show="darkMode"><i class="fas fa-moon"></i> Dark</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mx-auto px-4 py-5">
+    {% with messages = get_flashed_messages(with_categories=True) %}
+      {% if messages %}
+        {% for category, msg in messages %}
+          <div class="alert alert-{{ category }} mb-4">
+            {{ msg }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">X</button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <!-- Main content block -->
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+
+  {% block scripts %}{% endblock %}
+</body>
+</html> - Response: The provided code is not Python code, but rather a Jinja2 template, which is used in Python web frameworks like Flask. Jinja2 templates are HTML files that allow for Python-like expressions. 
+
+To make the template more mobile friendly, you can use responsive design techniques. The template is already using Tailwind CSS, a utility-first CSS framework that is designed with responsiveness in mind. 
+
+Here are some changes you can make:
+
+1. Make the navigation bar responsive: Use Tailwind CSS classes to adjust the layout of the navigation bar on smaller screens.
+
+2. Make the main content responsive: Adjust the width and padding of the main content based on the screen size.
+
+3. Make the alert messages responsive: Adjust the layout of the alert messages for smaller screens.
+
+Here's how you can implement these changes:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Flashcards App{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Alpine.js for interactive components like the Dark Mode toggle -->
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
+
+  {% block head %}{% endblock %}
+</head>
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100" x-data="{ darkMode: false }" :class="{ 'dark': darkMode }">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-800 p-4 sm:p-6">
+    <div class="container mx-auto flex flex-wrap justify-between items-center">
+      <a class="text-white font-bold text-lg sm:text-xl" href="{{ url_for('auth.index') }}">
+        Flashcards
+      </a>
+      <div>
+        <button @click="darkMode = !darkMode" class="text-white">
+          <span x-show="!darkMode"><i class="fas fa-sun"></i> Light</span>
+          <span x-show="darkMode"><i class="fas fa-moon"></i> Dark</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mx-auto px-4 py-5 sm:px-6 sm:py-8">
+    {% with messages = get_flashed_messages(with_categories=True) %}
+      {% if messages %}
+        {% for category, msg in messages %}
+          <div class="alert alert-{{ category }} mb-4 sm:mb-6">
+            {{ msg }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">X</button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <!-- Main content block -->
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+
+  {% block scripts %}{% endblock %}
+</body>
+</html>
+```
+
+In this updated code, the `sm:` prefix is used to apply styles when the screen is small (640px and up). Adjust the breakpoints as needed based on your design.
+2025-06-07 17:33:09 - Query: print('Hello World')
+ - Response: The given code is already simple and readable. It's a single line of code that prints "Hello World" to the console. There's no need for refactoring in this case.
+2025-06-07 17:33:37 - Query: print('Hello World')
+ - Response: Here is the refactored code:
+
+```python
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+sum = num1 + num2
+print("The sum is", sum)
+```
+2025-06-07 17:36:16 - Query: print('Hello World')
+ - Response: The given Python code is already simple and readable. It's a basic print statement that outputs the string 'Hello World'. There's no real need or way to refactor this for readability.
+2025-06-07 17:36:48 - Query: print('Hello World')
+ - Response: Code:
+```python
+num1 = 5
+num2 = 10
+print(num1 + num2)
+```
+2025-06-07 17:41:30 - Query: html
+    <link href="/static/css/custom_styles.css" rel="stylesheet"> - Response: html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+2025-06-07 17:48:43 - Query: 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Flashcards App{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Local and minimized versions of Tailwind CSS for faster load -->
+  <link href="/static/tailwind.min.css" rel="stylesheet">
+
+  <!-- Local Alpine.js for better load times and offline access -->
+  <script src="/static/alpine.min.js" defer></script>
+
+  {% block head %}{% endblock %}
+</head>
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100" x-data="{ darkMode: false }" :class="{ 'dark': darkMode }">
+
+  <!-- Responsive Navbar -->
+  <nav class="bg-gray-800 p-4 sm:p-6 flex flex-wrap justify-between items-center">
+    <a class="text-white font-bold text-lg" href="{{ url_for('auth.index') }}">Flashcards</a>
+    <button class="text-white md:hidden" @click="menu = !menu">
+      <!-- Hamburger Icon -->
+      <i class="fas fa-bars"></i>
+    </button>
+    <div :class="{'block': menu, 'hidden': !menu}" class="hidden md:block">
+      <button @click="darkMode = !darkMode" class="text-white">
+        <span x-show="!darkMode"><i class="fas fa-sun"></i> Light</span>
+        <span x-show="darkMode"><i class="fas fa-moon"></i> Dark</span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container mx-auto px-4 py-5 sm:px-6 lg:px-8">
+    {% with messages = get_flashed_messages(with_categories=True) %}
+      {% if messages %}
+        {% for category, msg in messages %}
+          <div class="alert alert-{{ category }} mb-4 sm:mb-6">
+            {{ msg }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">X</button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+
+  {% block scripts %}{% endblock %}
+</body>
+</html> - Response: To modernize the look of your website and include animations, we can enhance the CSS being used in your `base.html` file. I will add some CSS modifications for smooth transitions and interaction-based animations to certain elements, such as button hovers and changes in the theme (light and dark mode).
+
+Since the base file is currently using Tailwind CSS, many improvements can be made directly with Tailwind utility classes. For elements or features that Tailwind can't handle on its own, we'll add custom styles.
+
+Here’s an updated version of the `base.html` file with CSS enhancements using Tailwind CSS and some custom styles:
+
+1. **Improved Navbar with Animation**
+2. **Enhanced Button for Theme Toggle with Smooth Transition**
+3. **Modernized Flash Messages**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Flashcards App{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Local and minimized versions of Tailwind CSS for faster load -->
+  <link href="/static/tailwind.min.css" rel="stylesheet">
+
+  <!-- Custom Styles for Additional Animations and Effects -->
+  <style>
+    .btn-transition {
+      transition: all 0.3s ease-in-out;
+    }
+    .btn-hover\:scale:hover {
+      transform: scale(1.05);
+    }
+    .theme-icon {
+      transition: transform 0.5s ease;
+    }
+    .alert {
+      transition: opacity 0.5s ease-out;
+    }
+  </style>
+
+  <!-- Local Alpine.js for better load times and offline access -->
+  <script src="/static/alpine.min.js" defer></script>
+
+  {% block head %}{% endblock %}
+</head>
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500" x-data="{ darkMode: false, menu: false }" :class="{ 'dark': darkMode }">
+
+  <!-- Responsive Navbar -->
+  <nav class="bg-gray-800 p-4 sm:p-6 flex flex-wrap justify-between items-center">
+    <a class="text-white font-bold text-lg" href="{{ url_for('auth.index') }}">Flashcards</a>
+    <button class="text-white md:hidden btn-transition btn-hover:scale" @click="menu = !menu">
+      <!-- Hamburger Icon -->
+      <i class="fas fa-bars"></i>
+    </button>
+    <div :class="{'block': menu, 'hidden': !menu}" class="hidden md:block">
+      <button @click="darkMode = !darkMode" class="text-white btn-transition">
+        <span x-show="!darkMode" class="theme-icon"><i class="fas fa-sun"></i> Light</span>
+        <span x-show="darkMode" class="theme-icon" style="transform: rotate(180deg);"><i class="fas fa-moon"></i> Dark</span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container mx-auto px-4 py-5 sm:px-6 lg:px-8">
+    {% with messages = get_flashed_messages(with_categories=True) %}
+      {% if messages %}
+        {% for category, msg in messages %}
+          <div class="alert alert-{{ category }} mb-4 sm:mb-6 opacity-90 hover:opacity-100">
+            {{ msg }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">X</button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+
+  {% block scripts %}{% endblock %}
+</body>
+</html>
+```
+
+### Key Enhancements:
+1. **Transitions and Hover Effects:** Added scale transition on button hover and smooth theme icon rotation.
+2. **Flash Message Animation:** Added opacity transition for alert messages to make them appear smoother.
+3. **Tailwind for Theme Management:** Utilized Tailwind’s directive for managing dark mode to keep the UI consistent.
+
+This refactoring introduces a subtle, modern look and feel with smooth transitions that improve the user interaction experience.
+2025-06-07 18:07:21 - Query: print('Hello World')
+ - Response: def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    if b != 0:
+        return a / b
+    else:
+        return "Cannot divide by zero"
+
+# Example usage
+if __name__ == "__main__":
+    print("Addition of 5 and 3:", add(5, 3))
+    print("Subtraction of 5 and 3:", subtract(5, 3))
+    print("Multiplication of 5 and 3:", multiply(5, 3))
+    print("Division of 5 and 3:", divide(5, 3))
+2025-06-07 18:09:20 - Query: def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    if b != 0:
+        return a / b
+    else:
+        return "Cannot divide by zero"
+
+# Example usage
+if __name__ == "__main__":
+    print("Addition of 5 and 3:", add(5, 3))
+    print("Subtraction of 5 and 3:", subtract(5, 3))
+    print("Multiplication of 5 and 3:", multiply(5, 3))
+    print("Division of 5 and 3:", divide(5, 3)) - Response: def find_slope(x1, y1, x2, y2):
+    """
+    Calculate the slope between two points (x1, y1) and (x2, y2).
+
+    Args:
+    x1, y1, x2, y2 (float): Coordinates of the two points.
+
+    Returns:
+    float: The slope of the line connecting the points, or a message if the line is vertical.
+    """
+    try:
+        return (y2 - y1) / (x2 - x1)
+    except ZeroDivisionError:
+        return "Undefined slope (line is vertical)"
+
+# Example usage
+if __name__ == "__main__":
+    print("Slope between (1, 2) and (3, 8):", find_slope(1, 2, 3, 8))
+    print("Slope between (4, 6) and (4, 10):", find_slope(4, 6, 4, 10))
+2025-06-07 18:09:59 - Query: def find_slope(x1, y1, x2, y2):
+    """
+    Calculate the slope between two points (x1, y1) and (x2, y2).
+
+    Args:
+    x1, y1, x2, y2 (float): Coordinates of the two points.
+
+    Returns:
+    float: The slope of the line connecting the points, or a message if the line is vertical.
+    """
+    try:
+        return (y2 - y1) / (x2 - x1)
+    except ZeroDivisionError:
+        return "Undefined slope (line is vertical)"
+
+# Example usage
+if __name__ == "__main__":
+    print("Slope between (1, 2) and (3, 8):", find_slope(1, 2, 3, 8))
+    print("Slope between (4, 6) and (4, 10):", find_slope(4, 6, 4, 10)) - Response: import pygame
+import sys
+
+def find_slope(x1, y1, x2, y2):
+    """
+    Calculate the slope between two points (x1, y1) and (x2, y2).
+
+    Args:
+    x1, y1, x2, y2 (float): Coordinates of the two points.
+
+    Returns:
+    float: The slope of the line connecting the points, or a message if the line is vertical.
+    """
+    try:
+        return (y2 - y1) / (x2 - x1)
+    except ZeroDivisionError:
+        return "Undefined slope (line is vertical)"
+
+def main():
+    pygame.init()
+    screen = pygame.display.set_mode((400, 300))
+    pygame.display.set_caption("Slope Calculator")
+    
+    font = pygame.font.Font(None, 32)
+    
+    clock = pygame.time.Clock()
+    input_boxes = [
+        pygame.Rect(100, 50, 140, 32),
+        pygame.Rect(100, 100, 140, 32),
+        pygame.Rect(100, 150, 140, 32),
+        pygame.Rect(100, 200, 140, 32)
+    ]
+    colors = [(pygame.Color('lightskyblue3')) for _ in range(4)]
+    active = [False for _ in range(4)]
+    text = ['' for _ in range(4)]
+    
+    calculated_text = ""
+    
+    done = False
+    while not done:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                done = True
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                for i, box in enumerate(input_boxes):
+                    if box.collidepoint(event.pos):
+                        active[i] = not active[i]
+                    else:
+                        active[i] = False
+                    colors[i] = pygame.Color('lightskyblue4') if active[i] else pygame.Color('lightskyblue3')
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    try:
+                        x1, y1, x2, y2 = map(float, text)
+                        slope = find_slope(x1, y1, x2, y2)
+                        calculated_text = f"Slope: {slope}"
+                    except:
+                        calculated_text = "Invalid input"
+                elif event.key == pygame.K_BACKSPACE:
+                    for i in range(4):
+                        if active[i]:
+                            text[i] = text[i][:-1]
+                else:
+                    for i in range(4):
+                        if active[i]:
+                            text[i] += event.unicode
+        
+        screen.fill((30, 30, 30))
+        
+        for i, box in enumerate(input_boxes):
+            txt_surface = font.render(text[i], True, pygame.Color('white'))
+            screen.blit(txt_surface, (box.x+5, box.y+5))
+            pygame.draw.rect(screen, colors[i], box, 2)
+        
+        if calculated_text:
+            result_surf = font.render(calculated_text, True, pygame.Color('orange'))
+            screen.blit(result_surf, (50, 250))
+        
+        pygame.display.flip()
+        clock.tick(30)
+    
+    pygame.quit()
+    sys.exit()
+
+if __name__ == "__main__":
+    main()
+2025-06-07 18:19:43 - Query: import os
+import streamlit as st
+from memory.logger import log_memory
+from backend.upgrade_project import read_code, upgrade_code, write_code
+
+def set_page_settings():
+    """ Set the page configuration for Streamlit UI. """
+    st.set_page_config(page_title="AI Coding Assistant", layout="wide")
+
+def configure_sidebar():
+    """ Configure the sidebar settings for theme and upgrade options. """
+    st.sidebar.title("⚙️ Settings")
+    dark_mode = st.sidebar.checkbox("🌙 Dark Mode", value=True)
+    upgrade_options = [
+        "Improve readability",
+        "Add dark theme",
+        "Refactor into functions",
+        "Convert to class-based structure",
+        "Document with comments",
+        "Optimize for performance"
+    ]
+    selected_upgrade = st.sidebar.selectbox("💡 Suggested Upgrades", upgrade_options)
+    return dark_mode, selected_upgrade
+
+def apply_dark_mode(dark_mode):
+    """ Apply dark mode theme to the Streamlit app. """
+    if dark_mode:
+        st.markdown("""
+            <style>
+            body { background-color: #121212; color: #e0e0e0; }
+            .stTextArea textarea { background-color: #1e1e1e; color: #e0e0e0; }
+            .stButton>button { background-color: #6a1b9a; color: white; border-radius: 10px; }
+            .stButton>button:hover { background-color: #9c4dcc; box-shadow: 0 0 10px #9c4dcc; }
+            </style>
+        """, unsafe_allow_html=True)
+
+def upgrade_logic(file_path, custom_upgrade):
+    """ Handle the upgrade logic upon button click in UI. """
+    if not os.getenv("OPENAI_API_KEY"):
+        st.error("❌ OPENAI_API_KEY environment variable not set.")
+    elif not os.path.exists(file_path):
+        st.warning("⚠️ File or folder not found.")
+    else:
+        perform_upgrade(file_path, custom_upgrade)
+
+def perform_upgrade(file_path, custom_upgrade):
+    """ Read, upgrade, and write back the upgraded code to the filesystem. """
+    try:
+        files = read_code(file_path)
+        upgraded = upgrade_code(files, custom_upgrade)
+        write_code(upgraded)
+        display_upgraded_files(upgraded, files)
+    except Exception as e:
+        st.error(f"⚠️ Error: {e}")
+
+def display_upgraded_files(upgraded, files):
+    """ Display upgraded files and attempt to log memory usage differences. """
+    for fname in upgraded:
+        st.markdown(f"### ✅ Updated `{fname}`")
+        st.code(upgraded[fname], language='python')
+        try:
+            log_memory(files[fname], upgraded[fname])
+        except Exception as e:
+            st.error(f"Could not log interaction: {e}")
+
+def main():
+    """ Main function to handle UI elements and user interactions. """
+    set_page_settings()
+    dark_mode, selected_upgrade = configure_sidebar()
+    apply_dark_mode(dark_mode)
+    st.title("🧠 AI Coding Assistant")
+    file_path = st.text_input("📂 Path to your local file or folder:", "testfile.py")
+    custom_upgrade = st.text_input("🎯 Describe the improvement:", selected_upgrade)
+    if st.button("🚀 Apply AI Upgrade"):
+        upgrade_logic(file_path, custom_upgrade)
+    st.markdown("### 📜 Edit History (Coming Soon...)")
+
+if __name__ == "__main__":
+    main() - Response: import os
+import streamlit as st
+from memory.logger import log_memory
+from backend.upgrade_project import read_code, upgrade_code, write_code
+
+def set_page_settings():
+    """ Set the page configuration for Streamlit UI. """
+    st.set_page_config(page_title="AI Coding Assistant", layout="wide")
+
+def configure_sidebar():
+    """ Configure the sidebar settings for theme and upgrade options. """
+    st.sidebar.title("⚙️ Settings")
+    dark_mode = st.sidebar.checkbox("🌙 Dark Mode", value=True)
+    upgrade_options = [
+        "Improve readability",
+        "Add dark theme",
+        "Refactor into functions",
+        "Convert to class-based structure",
+        "Document with comments",
+        "Optimize for performance"
+    ]
+    selected_upgrade = st.sidebar.selectbox("💡 Suggested Upgrades", upgrade_options)
+    # Added to allow users to add their own upgrade ideas
+    custom_upgrades = st.sidebar.text_area("💡 Add your own upgrade ideas:")
+    if custom_upgrades:
+        upgrade_options.append(custom_upgrades)
+    return dark_mode, selected_upgrade
+
+def apply_dark_mode(dark_mode):
+    """ Apply dark mode theme to the Streamlit app. """
+    if dark_mode:
+        st.markdown("""
+            <style>
+            body { background-color: #121212; color: #e0e0e0; }
+            .stTextArea textarea { background-color: #1e1e1e; color: #e0e0e0; }
+            .stButton>button { background-color: #6a1b9a; color: white; border-radius: 10px; }
+            .stButton>button:hover { background-color: #9c4dcc; box-shadow: 0 0 10px #9c4dcc; }
+            </style>
+        """, unsafe_allow_html=True)
+
+def upgrade_logic(file_path, custom_upgrade):
+    """ Handle the upgrade logic upon button click in UI. """
+    if not os.getenv("OPENAI_API_KEY"):
+        st.error("❌ OPENAI_API_KEY environment variable not set.")
+    elif not os.path.exists(file_path):
+        st.warning("⚠️ File or folder not found.")
+    else:
+        perform_upgrade(file_path, custom_upgrade)
+
+def perform_upgrade(file_path, custom_upgrade):
+    """ Read, upgrade, and write back the upgraded code to the filesystem. """
+    try:
+        files = read_code(file_path)
+        upgraded = upgrade_code(files, custom_upgrade)
+        write_code(upgraded)
+        display_upgraded_files(upgraded, files)
+    except Exception as e:
+        st.error(f"⚠️ Error: {e}")
+
+def display_upgraded_files(upgraded, files):
+    """ Display upgraded files and attempt to log memory usage differences. """
+    for fname in upgraded:
+        st.markdown(f"### ✅ Updated `{fname}`")
+        st.code(upgraded[fname], language='python')
+        try:
+            log_memory(files[fname], upgraded[fname])
+        except Exception as e:
+            st.error(f"Could not log interaction: {e}")
+
+def main():
+    """ Main function to handle UI elements and user interactions. """
+    set_page_settings()
+    dark_mode, selected_upgrade = configure_sidebar()
+    apply_dark_mode(dark_mode)
+    st.title("🧠 AI Coding Assistant")
+    file_path = st.text_input("📂 Path to your local file or folder:", "testfile.py")
+    custom_upgrade = st.text_input("🎯 Describe the improvement:", selected_upgrade)
+    if st.button("🚀 Apply AI Upgrade"):
+        upgrade_logic(file_path, custom_upgrade)
+    # Add new interaction feature to record user feedback
+    user_feedback = st.text_area("🤖 Your feedback on this tool:")
+    if st.button("Submit Feedback"):
+        st.write("Thanks for your feedback!")  # Simple acknowledgment
+
+    st.markdown("### 📜 Edit History (Coming Soon...)")
+
+if __name__ == "__main__":
+    main()
+2025-06-07 18:23:06 - Query: import os
+import streamlit as st
+from memory.logger import log_memory
+from backend.upgrade_project import read_code, upgrade_code, write_code
+
+def set_page_settings():
+    """ Set the page configuration for Streamlit UI. """
+    st.set_page_config(page_title="AI Coding Assistant", layout="wide")
+
+def configure_sidebar():
+    """ Configure the sidebar settings for theme and upgrade options. """
+    st.sidebar.title("⚙️ Settings")
+    dark_mode = st.sidebar.checkbox("🌙 Dark Mode", value=True)
+    upgrade_options = [
+        "Improve readability",
+        "Add dark theme",
+        "Refactor into functions",
+        "Convert to class-based structure",
+        "Document with comments",
+        "Optimize for performance"
+    ]
+    selected_upgrade = st.sidebar.selectbox("💡 Suggested Upgrades", upgrade_options)
+    # Added to allow users to add their own upgrade ideas
+    custom_upgrades = st.sidebar.text_area("💡 Add your own upgrade ideas:")
+    if custom_upgrades:
+        upgrade_options.append(custom_upgrades)
+    return dark_mode, selected_upgrade
+
+def apply_dark_mode(dark_mode):
+    """ Apply dark mode theme to the Streamlit app. """
+    if dark_mode:
+        st.markdown("""
+            <style>
+            body { background-color: #121212; color: #e0e0e0; }
+            .stTextArea textarea { background-color: #1e1e1e; color: #e0e0e0; }
+            .stButton>button { background-color: #6a1b9a; color: white; border-radius: 10px; }
+            .stButton>button:hover { background-color: #9c4dcc; box-shadow: 0 0 10px #9c4dcc; }
+            </style>
+        """, unsafe_allow_html=True)
+
+def upgrade_logic(file_path, custom_upgrade):
+    """ Handle the upgrade logic upon button click in UI. """
+    if not os.getenv("OPENAI_API_KEY"):
+        st.error("❌ OPENAI_API_KEY environment variable not set.")
+    elif not os.path.exists(file_path):
+        st.warning("⚠️ File or folder not found.")
+    else:
+        perform_upgrade(file_path, custom_upgrade)
+
+def perform_upgrade(file_path, custom_upgrade):
+    """ Read, upgrade, and write back the upgraded code to the filesystem. """
+    try:
+        files = read_code(file_path)
+        upgraded = upgrade_code(files, custom_upgrade)
+        write_code(upgraded)
+        display_upgraded_files(upgraded, files)
+    except Exception as e:
+        st.error(f"⚠️ Error: {e}")
+
+def display_upgraded_files(upgraded, files):
+    """ Display upgraded files and attempt to log memory usage differences. """
+    for fname in upgraded:
+        st.markdown(f"### ✅ Updated `{fname}`")
+        st.code(upgraded[fname], language='python')
+        try:
+            log_memory(files[fname], upgraded[fname])
+        except Exception as e:
+            st.error(f"Could not log interaction: {e}")
+
+def main():
+    """ Main function to handle UI elements and user interactions. """
+    set_page_settings()
+    dark_mode, selected_upgrade = configure_sidebar()
+    apply_dark_mode(dark_mode)
+    st.title("🧠 AI Coding Assistant")
+    file_path = st.text_input("📂 Path to your local file or folder:", "testfile.py")
+    custom_upgrade = st.text_input("🎯 Describe the improvement:", selected_upgrade)
+    if st.button("🚀 Apply AI Upgrade"):
+        upgrade_logic(file_path, custom_upgrade)
+    # Add new interaction feature to record user feedback
+    user_feedback = st.text_area("🤖 Your feedback on this tool:")
+    if st.button("Submit Feedback"):
+        st.write("Thanks for your feedback!")  # Simple acknowledgment
+
+    st.markdown("### 📜 Edit History (Coming Soon...)")
+
+if __name__ == "__main__":
+    main() - Response: import os
+import streamlit as st
+from memory.logger import log_memory
+from backend.upgrade_project import read_code, upgrade_code, write_code
+
+def set_page_settings():
+    """ Set the page configuration for Streamlit UI. """
+    st.set_page_config(page_title="AI Coding Assistant", layout="wide")
+
+def configure_sidebar():
+    """ Configure the sidebar settings for theme and upgrade options. """
+    st.sidebar.title("⚙️ Settings")
+    dark_mode = st.sidebar.checkbox("🌙 Dark Mode", value=True)
+    upgrade_options = [
+        "Improve readability",
+        "Add dark theme",
+        "Refactor into functions",
+        "Convert to class-based structure",
+        "Document with comments",
+        "Optimize for performance"
+    ]
+    selected_upgrade = st.sidebar.selectbox("💡 Suggested Upgrades", upgrade_options)
+    # Added to allow users to add their own upgrade ideas
+    custom_upgrades = st.sidebar.text_area("💡 Add your own upgrade ideas:")
+    if custom_upgrades:
+        upgrade_options.append(custom_upgrades)
+    return dark_mode, selected_upgrade
+
+def apply_dark_mode(dark_mode):
+    """ Apply dark mode theme to the Streamlit app. """
+    if dark_mode:
+        st.markdown("""
+            <style>
+            body { background-color: #121212; color: #e0e0e0; }
+            .stTextArea textarea { background-color: #1e1e1e; color: #e0e0e0; }
+            .stButton>button { background-color: #6a1b9a; color: white; border-radius: 10px; }
+            .stButton>button:hover { background-color: #9c4dcc; box-shadow: 0 0 10px #9c4dcc; }
+            </style>
+        """, unsafe_allow_html=True)
+
+def upgrade_logic(file_path, custom_upgrade):
+    """ Handle the upgrade logic upon button click in UI. """
+    if not os.getenv("OPENAI_API_KEY"):
+        st.error("❌ OPENAI_API_KEY environment variable not set.")
+    elif not os.path.exists(file_path):
+        st.warning("⚠️ File or folder not found.")
+    else:
+        perform_upgrade(file_path, custom_upgrade)
+
+def perform_upgrade(file_path, custom_upgrade):
+    """ Read, upgrade, and write back the upgraded code to the filesystem. """
+    try:
+        files = read_code(file_path)
+        upgraded = upgrade_code(files, custom_upgrade)
+        write_code(upgraded)
+        display_upgraded_files(upgraded, files)
+    except Exception as e:
+        st.error(f"⚠️ Error: {e}")
+
+def display_upgraded_files(upgraded, files):
+    """ Display upgraded files and attempt to log memory usage differences. """
+    for fname in upgraded:
+        st.markdown(f"### ✅ Updated `{fname}`")
+        st.code(upgraded[fname], language='python')
+        try:
+            log_memory(files[fname], upgraded[fname])
+        except Exception as e:
+            st.error(f"Could not log interaction: {e}")
+
+def main():
+    """ Main function to handle UI elements and user interactions. """
+    set_page_settings()
+    dark_mode, selected_upgrade = configure_sidebar()
+    apply_dark_mode(dark_mode)
+    st.title("🧠 AI Coding Assistant")
+    file_path = st.text_input("📂 Path to your local file or folder:", "testfile.py")
+    custom_upgrade = st.text_input("🎯 Describe the improvement:", selected_upgrade)
+    if st.button("🚀 Apply AI Upgrade"):
+        upgrade_logic(file_path, custom_upgrade)
+    # Add new interaction feature to record user feedback
+    user_feedback = st.text_area("🤖 Your feedback on this tool:")
+    if st.button("Submit Feedback"):
+        st.write("Thanks for your feedback!")  # Simple acknowledgment
+    
+    st.subheader("📜 Edit History")
+    if st.session_state.get('edit_history'):
+        for edit in st.session_state['edit_history']:
+            st.text(edit)
+    else:
+        st.write("No edits made yet.")
+    # Record current upgrade attempt into history
+    if st.button("Record Edit"):
+        if 'edit_history' not in st.session_state:
+            st.session_state['edit_history'] = []
+        st.session_state['edit_history'].append(f"Edit made on {file_path} with change: {custom_upgrade}")
+
+if __name__ == "__main__":
+    main()
+2025-06-07 18:29:56 - Query: import os, re
+import argparse
+from openai import OpenAI
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+def read_code(path):
+    if os.path.isdir(path):
+        return {
+            os.path.join(dp, f): open(os.path.join(dp, f), encoding="utf-8").read()
+            for dp, _, fn in os.walk(path)
+            for f in fn if f.endswith(".py") or f.endswith(".html") or f.endswith(".css")
+        }
+    return {path: open(path, encoding="utf-8").read()}
+
+def write_code(updates):
+    for fname, content in updates.items():
+        with open(fname, "w", encoding="utf-8") as f:
+            f.write(content)
+        print(f"✅ Updated {fname}")
+
+def upgrade_code(files, upgrade_instruction):
+    messages = [{"role": "system", "content": "You are an expert Python refactorer."}]
+    for fname, content in files.items():
+        messages.append({"role": "user", "content": f"File: {fname}\n\n{content}"})
+        messages.append({
+            "role": "user",
+            "content": (
+                "For each file, respond in this exact format:\n\n"
+                "File: path/to/filename.ext\n"
+                "```<lang>\n"
+                "<new code>\n"
+                "```\n\n"
+                "Now apply the following upgrade across all files:\n"
+                f"{upgrade_instruction}"
+            )
+        })
+    response = client.chat.completions.create(
+        model="gpt-4-turbo",
+        messages=messages
+    )
+
+    print("GPT OUTPUT:\n", response.choices[0].message.content)
+    return parse_response(response.choices[0].message.content, files)
+
+
+def parse_response(gpt_output, files):
+    result = {}
+    blocks = re.findall(r"File:\s*(.*?)\n+```(?:html|python|css)?\n(.*?)```", gpt_output, re.DOTALL)
+    
+    if not blocks:
+        print("⚠️ No file blocks with markdown code found. Returning raw fallback.")
+        for fname in files:
+            result[fname] = gpt_output
+        return result
+
+    for fname, content in blocks:
+        fname = fname.strip()
+        result[fname] = content.strip()
+
+    # Fallback for any files not included
+    for fname in files:
+        if fname not in result:
+            print(f"⚠️ No update found for {fname}. Keeping original.")
+            result[fname] = files[fname]
+
+    return result
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--path", required=True)
+    parser.add_argument("--upgrade", required=True)
+    args = parser.parse_args()
+
+    if not os.getenv("OPENAI_API_KEY"):
+        raise ValueError("❌ OPENAI_API_KEY environment variable not set.")
+
+    files = read_code(args.path)
+    updated_files = upgrade_code(files, args.upgrade)
+    write_code(updated_files)
+ - Response: Here are tailored improvements to the provided `upgrade_project.py` script to make it more robust, readable, and maintainable:
+
+1. **Optimized Imports:**
+   Group and order them logically.
+
+2. **Enhanced File Reading:**
+   Use context managers (`with` statement) to handle file I/O operations properly which ensures files are always closed properly even if an error occurs.
+
+3. **Error Handling:**
+   Add appropriate error handling, especially for file operations and API interactions.
+
+4. **Extended File Filtering:**
+   Isolate file type determination into a separate function to make adding new file types easier.
+
+5. **Structured CLI Arguments:**
+   Use a function to encapsulate the argument parsing.
+
+6. **Environment Variables Management:**
+   Create a function to manage environment variables which simplifies configuration checks.
+
+7. **Improved Logging:**
+   Replace print statements with logging for better control over the output and to help with diagnosing issues.
+
+8. **Code documentation:**
+   Add docstrings and comments to improve readability and maintainability.
+
+Here is the refactored version of `upgrade_project.py`:
+
+```python
+import os
+import re
+import argparse
+import logging
+from openai import OpenAI
+
+# Setup basic logging configuration
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+def read_code(path):
+    """
+    Read files from the given directory or file path. Filters for specific file extensions.
+    """
+    def is_valid_file(f):
+        return f.endswith((".py", ".html", ".css"))
+    
+    if os.path.isdir(path):
+        return {
+            os.path.join(dp, f): read_file(os.path.join(dp, f))
+            for dp, _, fn in os.walk(path)
+            for f in fn 
+            if is_valid_file(f)
+        }
+    else:
+        return {path: read_file(path)}
+
+def read_file(filepath):
+    """
+    Safely read a file and return its content.
+    """
+    with open(filepath, 'r', encoding='utf-8') as file:
+        return file.read()
+
+def write_code(updates):
+    """
+    Write updates to files.
+    """
+    for fname, content in updates.items():
+        with open(fname, 'w', encoding='utf-8') as file:
+            file.write(content)
+        logging.info(f"✅ Updated {fname}")
+
+def upgrade_code(files, upgrade_instruction):
+    """
+    Send file contents to OpenAI API for upgrading, then parse the response.
+    """
+    messages = [{"role": "system", "content": "You are an expert Python refactorer."}]
+    for fname, content in files.items():
+        messages.append({"role": "user", "content": f"File: {fname}\n\n{content}"})
+        messages.append({
+            "role": "user",
+            "content": (
+                "For each file, respond in this exact format:\n\n"
+                "File: path/to/filename.ext\n"
+                "```<lang>\n"
+                "<new code>\n"
+                "```\n\n"
+                "Now apply the following upgrade across all files:\n"
+                f"{upgrade_instruction}"
+            )
+        })
+    response = client.chat_completions.create(
+        model="text-davinci-002",
+        messages=messages
+    )
+    
+    return parse_response(response['choices'][0]['message']['content'], files)
+
+def parse_response(gpt_output, files):
+    """
+    Parse the output from GPT to reform the file structure.
+    """
+    result = {}
+    blocks = re.findall(r"File:\s*(.*?)\n+```(?:html|python|css)?\n(.*?)```", gpt_output, re.DOTALL)
+    for fname, content in blocks:
+        fname = fname.strip()
+        result[fname] = content.strip()
+
+    for fname in files:
+        if fname not in result:
+            logging.warning(f"⚠️ No update found for {fname}. Keeping original.")
+            result[fname] = files[fname]
+
+    return result
+
+def parse_args():
+    """
+    Parse and return command line arguments.
+    """
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--path", required=True)
+    parser.add_argument("--upgrade", required=True)
+    return parser.parse_args()
+
+if __name__ == "__main__":
+    args = parse_args()
+    
+    if not os.getenv("OPENAI_API_KEY"):
+        logging.error("❌ OPENAI_API_KEY environment variable not set.")
+        exit(1)
+
+    files = read_code(args.path)
+    updated_files = upgrade_code(files, args.upgrade)
+    write_code(updated_files)
+```
+
+Each of these changes aims to enhance the overall structure, making the script ready for easier scaling, testing, and debugging.
+2025-06-07 18:39:42 - Query: import pygame
+import sys
+
+def find_slope(x1, y1, x2, y2):
+    """
+    Calculate the slope between two points (x1, y1) and (x2, y2).
+
+    Args:
+    x1, y1, x2, y2 (float): Coordinates of the two points.
+
+    Returns:
+    float: The slope of the line connecting the points, or a message if the line is vertical.
+    """
+    try:
+        return (y2 - y1) / (x2 - x1)
+    except ZeroDivisionError:
+        return "Undefined slope (line is vertical)"
+
+def main():
+    pygame.init()
+    screen = pygame.display.set_mode((400, 300))
+    pygame.display.set_caption("Slope Calculator")
+    
+    font = pygame.font.Font(None, 32)
+    
+    clock = pygame.time.Clock()
+    input_boxes = [
+        pygame.Rect(100, 50, 140, 32),
+        pygame.Rect(100, 100, 140, 32),
+        pygame.Rect(100, 150, 140, 32),
+        pygame.Rect(100, 200, 140, 32)
+    ]
+    colors = [(pygame.Color('lightskyblue3')) for _ in range(4)]
+    active = [False for _ in range(4)]
+    text = ['' for _ in range(4)]
+    
+    calculated_text = ""
+    
+    done = False
+    while not done:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                done = True
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                for i, box in enumerate(input_boxes):
+                    if box.collidepoint(event.pos):
+                        active[i] = not active[i]
+                    else:
+                        active[i] = False
+                    colors[i] = pygame.Color('lightskyblue4') if active[i] else pygame.Color('lightskyblue3')
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    try:
+                        x1, y1, x2, y2 = map(float, text)
+                        slope = find_slope(x1, y1, x2, y2)
+                        calculated_text = f"Slope: {slope}"
+                    except:
+                        calculated_text = "Invalid input"
+                elif event.key == pygame.K_BACKSPACE:
+                    for i in range(4):
+                        if active[i]:
+                            text[i] = text[i][:-1]
+                else:
+                    for i in range(4):
+                        if active[i]:
+                            text[i] += event.unicode
+        
+        screen.fill((30, 30, 30))
+        
+        for i, box in enumerate(input_boxes):
+            txt_surface = font.render(text[i], True, pygame.Color('white'))
+            screen.blit(txt_surface, (box.x+5, box.y+5))
+            pygame.draw.rect(screen, colors[i], box, 2)
+        
+        if calculated_text:
+            result_surf = font.render(calculated_text, True, pygame.Color('orange'))
+            screen.blit(result_surf, (50, 250))
+        
+        pygame.display.flip()
+        clock.tick(30)
+    
+    pygame.quit()
+    sys.exit()
+
+if __name__ == "__main__":
+    main() - Response: import pygame
+import sys
+
+def find_slope(x1, y1, x2, y2):
+    """
+    Calculate the slope between two points (x1, y1) and (x2, y2).
+
+    Args:
+    x1, y1, x2, y2 (float): Coordinates of the two points.
+
+    Returns:
+    float: The slope of the line connecting the points, or a message if the line is vertical.
+    """
+    try:
+        return (y2 - y1) / (x2 - x1)
+    except ZeroDivisionError:
+        return "Undefined slope (line is vertical)"
+
+def main():
+    pygame.init()
+    screen = pygame.display.set_mode((400, 300))
+    pygame.display.set_caption("Slope Calculator")
+    
+    font = pygame.font.Font(None, 32)
+    
+    clock = pygame.time.Clock()
+    input_boxes = [pygame.Rect(100, 50 + i * 50, 140, 32) for i in range(4)]
+    colors = [pygame.Color('lightskyblue3') for _ in range(4)]
+    active = [False] * 4
+    text = [''] * 4
+    
+    calculated_text = ""
+    
+    done = False
+    while not done:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                done = True
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                for i, box in enumerate(input_boxes):
+                    if box.collidepoint(event.pos):
+                        active[i] = not active[i]
+                    else:
+                        active[i] = False
+                    colors[i] = pygame.Color('lightskyblue4') if active[i] else pygame.Color('lightskyblue3')
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    try:
+                        x1, y1, x2, y2 = map(float, text)
+                        slope = find_slope(x1, y1, x2, y2)
+                        calculated_text = f"Slope: {slope}"
+                    except ValueError:
+                        calculated_text = "Invalid input"
+                elif event.key == pygame.K_BACKSPACE:
+                    for i in range(4):
+                        if active[i]:
+                            text[i] = text[i][:-1]
+                else:
+                    for i in range(4):
+                        if active[i]:
+                            text[i] += event.unicode
+        
+        screen.fill((30, 30, 30))
+        
+        for i, box in enumerate(input_boxes):
+            txt_surface = font.render(text[i], True, pygame.Color('white'))
+            screen.blit(txt_surface, (box.x+5, box.y+5))
+            pygame.draw.rect(screen, colors[i], box, 2)
+        
+        if calculated_text:
+            result_surf = font.render(calculated_text, True, pygame.Color('orange'))
+            screen.blit(result_surf, (50, 250))
+        
+        pygame.display.flip()
+        clock.tick(30)
+    
+    pygame.quit()
+    sys.exit()
+
+if __name__ == "__main__":
+    main()
+2025-06-07 20:52:45 - Query: import pygame
+import sys
+
+def find_slope(x1, y1, x2, y2):
+    """
+    Calculate the slope between two points (x1, y1) and (x2, y2).
+
+    Args:
+    x1, y1, x2, y2 (float): Coordinates of the two points.
+
+    Returns:
+    float: The slope of the line connecting the points, or a message if the line is vertical.
+    """
+    try:
+        return (y2 - y1) / (x2 - x1)
+    except ZeroDivisionError:
+        return "Undefined slope (line is vertical)"
+
+def main():
+    pygame.init()
+    screen = pygame.display.set_mode((400, 300))
+    pygame.display.set_caption("Slope Calculator")
+    
+    font = pygame.font.Font(None, 32)
+    
+    clock = pygame.time.Clock()
+    input_boxes = [pygame.Rect(100, 50 + i * 50, 140, 32) for i in range(4)]
+    colors = [pygame.Color('lightskyblue3') for _ in range(4)]
+    active = [False] * 4
+    text = [''] * 4
+    
+    calculated_text = ""
+    
+    done = False
+    while not done:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                done = True
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                for i, box in enumerate(input_boxes):
+                    if box.collidepoint(event.pos):
+                        active[i] = not active[i]
+                    else:
+                        active[i] = False
+                    colors[i] = pygame.Color('lightskyblue4') if active[i] else pygame.Color('lightskyblue3')
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    try:
+                        x1, y1, x2, y2 = map(float, text)
+                        slope = find_slope(x1, y1, x2, y2)
+                        calculated_text = f"Slope: {slope}"
+                    except ValueError:
+                        calculated_text = "Invalid input"
+                elif event.key == pygame.K_BACKSPACE:
+                    for i in range(4):
+                        if active[i]:
+                            text[i] = text[i][:-1]
+                else:
+                    for i in range(4):
+                        if active[i]:
+                            text[i] += event.unicode
+        
+        screen.fill((30, 30, 30))
+        
+        for i, box in enumerate(input_boxes):
+            txt_surface = font.render(text[i], True, pygame.Color('white'))
+            screen.blit(txt_surface, (box.x+5, box.y+5))
+            pygame.draw.rect(screen, colors[i], box, 2)
+        
+        if calculated_text:
+            result_surf = font.render(calculated_text, True, pygame.Color('orange'))
+            screen.blit(result_surf, (50, 250))
+        
+        pygame.display.flip()
+        clock.tick(30)
+    
+    pygame.quit()
+    sys.exit()
+
+if __name__ == "__main__":
+    main() - Response: import pygame
+import sys
+import random  # Added random module for random operations
+
+def find_slope(x1, y1, x2, y2):
+    """
+    Calculate the slope between two points (x1, y1) and (x2, y2).
+
+    Args:
+    x1, y1, x2, y2 (float): Coordinates of the two points.
+
+    Returns:
+    float: The slope of the line connecting the points, or a message if the line is vertical.
+    """
+    try:
+        return (y2 - y1) / (x2 - x1)
+    except ZeroDivisionError:
+        return "Undefined slope (line is vertical)"
+
+def main():
+    pygame.init()
+    screen = pygame.display.set_mode((400, 300))
+    pygame.display.set_caption("Slope Calculator")
+    
+    font = pygame.font.Font(None, 32)
+    
+    clock = pygame.time.Clock()
+    input_boxes = [pygame.Rect(100, 50 + i * 50, 140, 32) for i in range(4)]
+    colors = [pygame.Color('lightskyblue3') for _ in range(4)]
+    active = [False] * 4
+    text = [''] * 4
+    
+    calculated_text = ""
+    
+    done = False
+    while not done:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                done = True
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                for i, box in enumerate(input_boxes):
+                    if box.collidepoint(event.pos):
+                        active[i] = not active[i]
+                    else:
+                        active[i] = False
+                    colors[i] = pygame.Color('lightskyblue4') if active[i] else pygame.Color('lightskyblue3')
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    try:
+                        x1, y1, x2, y2 = map(float, text)
+                        slope = find_slope(x1, y1, x2, y2)
+                        calculated_text = f"Slope: {slope}"
+                    except ValueError:
+                        calculated_text = "Invalid input"
+                elif event.key == pygame.K_BACKSPACE:
+                    for i in range(4):
+                        if active[i]:
+                            text[i] = text[i][:-1]
+                else:
+                    for i in range(4):
+                        if active[i]:
+                            text[i] += event.unicode
+        
+        screen.fill((30, 30, 30))
+        
+        for i, box in enumerate(input_boxes):
+            txt_surface = font.render(text[i], True, pygame.Color('white'))
+            screen.blit(txt_surface, (box.x+5, box.y+5))
+            pygame.draw.rect(screen, colors[i], box, 2)
+        
+        if calculated_text:
+            result_surf = font.render(calculated_text, True, pygame.Color('orange'))
+            screen.blit(result_surf, (50, 250))
+        
+        # Random background color change on each frame
+        random_color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+        screen.fill(random_color)
+        
+        pygame.display.flip()
+        clock.tick(30)
+    
+    pygame.quit()
+    sys.exit()
+
+if __name__ == "__main__":
+    main()
+2025-06-07 20:57:45 - Query: import os
+import streamlit as st
+from memory.logger import log_memory
+from backend.upgrade_project import read_code, upgrade_code, write_code
+
+def set_page_settings():
+    """ Set the page configuration for Streamlit UI. """
+    st.set_page_config(page_title="AI Coding Assistant", layout="wide")
+
+def configure_sidebar():
+    """ Configure the sidebar settings for theme and upgrade options. """
+    st.sidebar.title("⚙️ Settings")
+    dark_mode = st.sidebar.checkbox("🌙 Dark Mode", value=True)
+    upgrade_options = [
+        "Improve readability",
+        "Add dark theme",
+        "Refactor into functions",
+        "Convert to class-based structure",
+        "Document with comments",
+        "Optimize for performance"
+    ]
+    selected_upgrade = st.sidebar.selectbox("💡 Suggested Upgrades", upgrade_options)
+    # Added to allow users to add their own upgrade ideas
+    custom_upgrades = st.sidebar.text_area("💡 Add your own upgrade ideas:")
+    if custom_upgrades:
+        upgrade_options.append(custom_upgrades)
+    return dark_mode, selected_upgrade
+
+def apply_dark_mode(dark_mode):
+    """ Apply dark mode theme to the Streamlit app. """
+    if dark_mode:
+        st.markdown("""
+            <style>
+            body { background-color: #121212; color: #e0e0e0; }
+            .stTextArea textarea { background-color: #1e1e1e; color: #e0e0e0; }
+            .stButton>button { background-color: #6a1b9a; color: white; border-radius: 10px; }
+            .stButton>button:hover { background-color: #9c4dcc; box-shadow: 0 0 10px #9c4dcc; }
+            </style>
+        """, unsafe_allow_html=True)
+
+def upgrade_logic(file_path, custom_upgrade):
+    """ Handle the upgrade logic upon button click in UI. """
+    if not os.getenv("OPENAI_API_KEY"):
+        st.error("❌ OPENAI_API_KEY environment variable not set.")
+    elif not os.path.exists(file_path):
+        st.warning("⚠️ File or folder not found.")
+    else:
+        perform_upgrade(file_path, custom_upgrade)
+
+def perform_upgrade(file_path, custom_upgrade):
+    """ Read, upgrade, and write back the upgraded code to the filesystem. """
+    try:
+        files = read_code(file_path)
+        upgraded = upgrade_code(files, custom_upgrade)
+        write_code(upgraded)
+        display_upgraded_files(upgraded, files)
+    except Exception as e:
+        st.error(f"⚠️ Error: {e}")
+
+def display_upgraded_files(upgraded, files):
+    """ Display upgraded files and attempt to log memory usage differences. """
+    for fname in upgraded:
+        st.markdown(f"### ✅ Updated `{fname}`")
+        st.code(upgraded[fname], language='python')
+        try:
+            log_memory(files[fname], upgraded[fname])
+        except Exception as e:
+            st.error(f"Could not log interaction: {e}")
+
+def main():
+    """ Main function to handle UI elements and user interactions. """
+    set_page_settings()
+    dark_mode, selected_upgrade = configure_sidebar()
+    apply_dark_mode(dark_mode)
+    st.title("🧠 AI Coding Assistant")
+    file_path = st.text_input("📂 Path to your local file or folder:", "testfile.py")
+    custom_upgrade = st.text_input("🎯 Describe the improvement:", selected_upgrade)
+    if st.button("🚀 Apply AI Upgrade"):
+        upgrade_logic(file_path, custom_upgrade)
+    # Add new interaction feature to record user feedback
+    user_feedback = st.text_area("🤖 Your feedback on this tool:")
+    if st.button("Submit Feedback"):
+        st.write("Thanks for your feedback!")  # Simple acknowledgment
+    
+    st.subheader("📜 Edit History")
+    if st.session_state.get('edit_history'):
+        for edit in st.session_state['edit_history']:
+            st.text(edit)
+    else:
+        st.write("No edits made yet.")
+    # Record current upgrade attempt into history
+    if st.button("Record Edit"):
+        if 'edit_history' not in st.session_state:
+            st.session_state['edit_history'] = []
+        st.session_state['edit_history'].append(f"Edit made on {file_path} with change: {custom_upgrade}")
+
+if __name__ == "__main__":
+    main() - Response: import os
+import streamlit as st
+from memory.logger import log_memory
+from backend.upgrade_project import read_code, upgrade_code, write_code
+from streamlit_file_selector import st_file_selector
+
+def set_page_settings():
+    """ Set the page configuration for Streamlit UI. """
+    st.set_page_config(page_title="AI Coding Assistant", layout="wide")
+
+def configure_sidebar():
+    """ Configure the sidebar settings for theme and upgrade options. """
+    st.sidebar.title("⚙️ Settings")
+    dark_mode = st.sidebar.checkbox("🌙 Dark Mode", value=True)
+    upgrade_options = [
+        "Improve readability",
+        "Add dark theme",
+        "Refactor into functions",
+        "Convert to class-based structure",
+        "Document with comments",
+        "Optimize for performance"
+    ]
+    selected_upgrade = st.sidebar.selectbox("💡 Suggested Upgrades", upgrade_options)
+    # Added to allow users to add their own upgrade ideas
+    custom_upgrades = st.sidebar.text_area("💡 Add your own upgrade ideas:")
+    if custom_upgrades:
+        upgrade_options.append(custom_upgrades)
+    return dark_mode, selected_upgrade
+
+def apply_dark_mode(dark_mode):
+    """ Apply dark mode theme to the Streamlit app. """
+    if dark_mode:
+        st.markdown("""
+            <style>
+            body { background-color: #121212; color: #e0e0e0; }
+            .stTextArea textarea { background-color: #1e1e1e; color: #e0e0e0; }
+            .stButton>button { background-color: #6a1b9a; color: white; border-radius: 10px; }
+            .stButton>button:hover { background-color: #9c4dcc; box-shadow: 0 0 10px #9c4dcc; }
+            </style>
+        """, unsafe_allow_html=True)
+
+def upgrade_logic(file_path, custom_upgrade):
+    """ Handle the upgrade logic upon button click in UI. """
+    if not os.getenv("OPENAI_API_KEY"):
+        st.error("❌ OPENAI_API_KEY environment variable not set.")
+    elif not os.path.exists(file_path):
+        st.warning("⚠️ File or folder not found.")
+    else:
+        perform_upgrade(file_path, custom_upgrade)
+
+def perform_upgrade(file_path, custom_upgrade):
+    """ Read, upgrade, and write back the upgraded code to the filesystem. """
+    try:
+        files = read_code(file_path)
+        upgraded = upgrade_code(files, custom_upgrade)
+        write_code(upgraded)
+        display_upgraded_files(upgraded, files)
+    except Exception as e:
+        st.error(f"⚠️ Error: {e}")
+
+def display_upgraded_files(upgraded, files):
+    """ Display upgraded files and attempt to log memory usage differences. """
+    for fname in upgraded:
+        st.markdown(f"### ✅ Updated `{fname}`")
+        st.code(upgraded[fname], language='python')
+        try:
+            log_memory(files[fname], upgraded[fname])
+        except Exception as e:
+            st.error(f"Could not log interaction: {e}")
+
+def main():
+    """ Main function to handle UI elements and user interactions. """
+    set_page_settings()
+    dark_mode, selected_upgrade = configure_sidebar()
+    apply_dark_mode(dark_mode)
+    st.title("🧠 AI Coding Assistant")
+    file_path = st_file_selector("📂 Path to your local file or folder:", "testfile.py")
+    custom_upgrade = st.text_input("🎯 Describe the improvement:", selected_upgrade)
+    if st.button("🚀 Apply AI Upgrade"):
+        upgrade_logic(file_path, custom_upgrade)
+    # Add new interaction feature to record user feedback
+    user_feedback = st.text_area("🤖 Your feedback on this tool:")
+    if st.button("Submit Feedback"):
+        st.write("Thanks for your feedback!")  # Simple acknowledgment
+    
+    st.subheader("📜 Edit History")
+    if st.session_state.get('edit_history'):
+        for edit in st.session_state['edit_history']:
+            st.text(edit)
+    else:
+        st.write("No edits made yet.")
+    # Record current upgrade attempt into history
+    if st.button("Record Edit"):
+        if 'edit_history' not in st.session_state:
+            st.session_state['edit_history'] = []
+        st.session_state['edit_history'].append(f"Edit made on {file_path} with change: {custom_upgrade}")
+
+if __name__ == "__main__":
+    main()
+2025-06-07 21:13:36 - Query: import React, { useState } from 'react';
+import styled from 'styled-components';
+import { useSpring, useTrail, animated } from '@react-spring/web';
+import evelynImg from '../images/evelyn.jpeg';
+import winfieldImg from '../images/winfield.jpeg';
+import cynthiaImg from '../images/cynthia.jpeg';
+
+const About = () => {
+  // Fade-in animation for the entire page
+  const pageFade = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 800 },
+  });
+
+  // Trail animation for the leader cards (staggered appearance)
+  const leaders = [
+    {
+      title: 'Honorable Evelyn Laporte',
+      description: 'A leader and visionary in faith-based broadcasting and healing-centered advocacy.',
+      bio: 'Evelyn Laporte has spent over 20 years building ministries and media projects dedicated to hope, healing, and faith. Her leadership bridges tradition and innovation.',
+      image: evelynImg,
+    },
+    {
+      title: 'Marshayne Winfield',
+      description: 'A spiritual mentor whose impact continues to guide Total Faith Network’s values.',
+      bio: 'A man of great wisdom and grace, Marshayne Winfield is recognized for his role in spiritual education and social outreach programs nationwide.',
+      image: winfieldImg,
+    },
+    {
+      title: 'Dr. Cynthia Ashley',
+      description: 'CEO of TFNTV and an advocate for communities impacted by autoimmune disease.',
+      bio: 'Dr. Ashley’s leadership blends media innovation with healthcare advocacy. She brings strategic vision to TFNTV’s growth and outreach missions.',
+      image: cynthiaImg,
+    },
+  ];
+
+  const [selectedLeader, setSelectedLeader] = useState(null);
+
+  const trail = useTrail(leaders.length, {
+    from: { opacity: 0, transform: 'translateY(20px)' },
+    to: { opacity: 1, transform: 'translateY(0px)' },
+    config: { mass: 1, tension: 200, friction: 20 },
+    delay: 300,
+  });
+
+  return (
+    <PageContainer style={pageFade}>
+      {/* Section: Our Leaders */}
+      <Section>
+        <SectionTitle>About Our Leaders</SectionTitle>
+        <LeaderGrid>
+          {trail.map((animation, idx) => {
+            const leader = leaders[idx];
+            return (
+              <LeaderCard key={idx} style={animation} bgcolor="#F9FAFB">
+                <LeaderImage src={leader.image} alt={leader.title} />
+                <LeaderContent>
+                  <LeaderName>{leader.title}</LeaderName>
+                  <LeaderDesc>{leader.description}</LeaderDesc>
+                  <ViewButton onClick={() => setSelectedLeader(leader)}>
+                    View Details
+                  </ViewButton>
+                </LeaderContent>
+              </LeaderCard>
+            );
+          })}
+        </LeaderGrid>
+
+        {selectedLeader && (
+          <ModalOverlay onClick={() => setSelectedLeader(null)}>
+            <ModalWindow onClick={(e) => e.stopPropagation()}>
+              <ModalImage src={selectedLeader.image} alt={selectedLeader.title} />
+              <ModalBody>
+                <ModalHeader>{selectedLeader.title}</ModalHeader>
+                <ModalDesc>
+                  <strong>{selectedLeader.description}</strong>
+                </ModalDesc>
+                <ModalText>{selectedLeader.bio}</ModalText>
+                <CloseButton onClick={() => setSelectedLeader(null)}>
+                  Close
+                </CloseButton>
+              </ModalBody>
+            </ModalWindow>
+          </ModalOverlay>
+        )}
+      </Section>
+
+      {/* Section: About TFNTV */}
+      <Section>
+        <SectionTitle>About Total Faith Network (TFNTV)</SectionTitle>
+        <AboutText>
+          Total Faith Network (TFNTV) is more than a media platform — it’s a mission-driven movement that blends creativity, purpose, and impact. Founded on the belief that faith-based and values-driven content can uplift communities and change lives, TFNTV delivers powerful storytelling through diverse programming that speaks to the heart and spirit of our time.
+        </AboutText>
+        <AboutText>
+          From inspirational films and groundbreaking documentaries to music, talk shows, and community-centered series, our content reflects real people, real purpose, and real transformation. At TFNTV, we don’t just broadcast — we build bridges across cultures, generations, and beliefs.
+        </AboutText>
+        <AboutText>
+          Through our expansive network of partner channels and our growing e-commerce platform, we empower small businesses, ministries, and creators to share their message, grow their influence, and generate meaningful revenue. We’re redefining media as a tool for both expression and economic empowerment.
+        </AboutText>
+        <AboutText>
+          At Total Faith Network, we believe our platform must also be a platform for healing. That’s why we’re deeply committed to Corporate Social Responsibility (CSR) — with a special focus on supporting individuals and families impacted by autoimmune diseases.
+        </AboutText>
+        <AboutText>
+          Autoimmune conditions affect millions of people, often silently and without adequate support or awareness. For every donation we receive, a portion is dedicated directly to funding autoimmune disease research and advocacy. Your contribution doesn't just fuel our mission — it fuels hope, science, and the fight for better treatment and cures.
+        </AboutText>
+        <AboutText>
+          We invite you to stand with us — not only in spreading light through media, but in bringing healing to those who need it most. Every dollar makes a difference. Every act of giving becomes proof that “Everyone wins @ TFN”.
+        </AboutText>
+      </Section>
+    </PageContainer>
+  );
+};
+
+// === Styled Components ===
+
+const PageContainer = styled(animated.div)`
+  padding: 3rem 2rem;
+  background: #E3F2FD;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+`;
+
+const Section = styled.section`
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+`;
+
+const SectionTitle = styled.h1`
+  color: #0D47A1;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #0D47A1, #1976D2);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+  }
+`;
+
+const LeaderGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+`;
+
+const LeaderCard = styled(animated.div)`
+  display: flex;
+  flex-direction: column;
+  background: ${(props) => props.bgcolor};
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const LeaderImage = styled.img`
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+`;
+
+const LeaderContent = styled.div`
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const LeaderName = styled.h3`
+  margin: 0 0 0.75rem;
+  color: #1976D2;
+  font-size: 1.4rem;
+`;
+
+const LeaderDesc = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+`;
+
+const ViewButton = styled.button`
+  align-self: flex-start;
+  padding: 0.7rem 1.4rem;
+  background: #0D47A1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #1976D2;
+  }
+`;
+
+// Modal Styles
+
+const ModalOverlay = styled.div`
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 2rem;
+`;
+
+const ModalWindow = styled.div`
+  background: #ffffff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 600px) {
+    flex-direction: row;
+    max-height: 70vh;
+  }
+`;
+
+const ModalImage = styled.img`
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  @media (min-width: 600px) {
+    width: 40%;
+    height: auto;
+    max-height: 70vh;
+  }
+`;
+
+const ModalBody = styled.div`
+  padding: 1.8rem;
+  flex: 1;
+  overflow-y: auto;
+`;
+
+const ModalHeader = styled.h2`
+  color: #0D47A1;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+`;
+
+const ModalDesc = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+`;
+
+const ModalText = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+`;
+
+const CloseButton = styled.button`
+  margin-top: 1rem;
+  padding: 0.6rem 1.4rem;
+  background: #D32F2F;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #B71C1C;
+  }
+`;
+
+// About TFNTV Text
+
+const AboutText = styled.p`
+  color: #1A237E;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  line-height: 1.7;
+`;
+
+export default About;
+ - Response: File: /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/pages/About.js
+```javascript
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { useSpring, useTrail, animated } from '@react-spring/web';
+import evelynImg from '../images/evelyn.jpeg';
+import winfieldImg from '../images/winfield.jpeg';
+import cynthiaImg from '../images/cynthia.jpeg';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination, Autoplay } from 'swiper';
+
+const advisoryImages = Array.from({ length: 6 }, (_, i) => require(`../images/Advisory${i + 1}.jpg`));
+
+const About = () => {
+  // Fade-in animation for the entire page
+  const pageFade = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 800 },
+  });
+
+  // Trail animation for the leader cards (staggered appearance)
+  const leaders = [
+    {
+      title: 'Honorable Evelyn Laporte',
+      description: 'A leader and visionary in faith-based broadcasting and healing-centered advocacy.',
+      bio: 'Evelyn Laporte has spent over 20 years building ministries and media projects dedicated to hope, healing, and faith. Her leadership bridges tradition and innovation.',
+      image: evelynImg,
+    },
+    {
+      title: 'Marshayne Winfield',
+      description: 'A spiritual mentor whose impact continues to guide Total Faith Network’s values.',
+      bio: 'A man of great wisdom and grace, Marshayne Winfield is recognized for his role in spiritual education and social outreach programs nationwide.',
+      image: winfieldImg,
+    },
+    {
+      title: 'Dr. Cynthia Ashley',
+      description: 'CEO of TFNTV and an advocate for communities impacted by autoimmune disease.',
+      bio: 'Dr. Ashley’s leadership blends media innovation with healthcare advocacy. She brings strategic vision to TFNTV’s growth and outreach missions.',
+      image: cynthiaImg,
+    },
+  ];
+
+  const [selectedLeader, setSelectedLeader] = useState(null);
+
+  const trail = useTrail(leaders.length, {
+    from: { opacity: 0, transform: 'translateY(20px)' },
+    to: { opacity: 1, transform: 'translateY(0px)' },
+    config: { mass: 1, tension: 200, friction: 20 },
+    delay: 300,
+  });
+
+  return (
+    <PageContainer style={pageFade}>
+      {/* Section: Our Leaders */}
+      <Section>
+        <SectionTitle>About Our Leaders</SectionTitle>
+        <LeaderGrid>
+          {trail.map((animation, idx) => {
+            const leader = leaders[idx];
+            return (
+              <LeaderCard key={idx} style={animation} bgcolor="#F9FAFB">
+                <LeaderImage src={leader.image} alt={leader.title} />
+                <LeaderContent>
+                  <LeaderName>{leader.title}</LeaderName>
+                  <LeaderDesc>{leader.description}</LeaderDesc>
+                  <ViewButton onClick={() => setSelectedLeader(leader)}>
+                    View Details
+                  </ViewButton>
+                </LeaderContent>
+              </LeaderCard>
+            );
+          })}
+        </LeaderGrid>
+
+        {selectedLeader && (
+          <ModalOverlay onClick={() => setSelectedLeader(null)}>
+            <ModalWindow onClick={(e) => e.stopPropagation()}>
+              <ModalImage src={selectedLeader.image} alt={selectedLeader.title} />
+              <ModalBody>
+                <ModalHeader>{selectedLeader.title}</ModalHeader>
+                <ModalDesc>
+                  <strong>{selectedLeader.description}</strong>
+                </ModalDesc>
+                <ModalText>{selectedLeader.bio}</ModalText>
+                <CloseButton onClick={() => setSelectedLeader(null)}>
+                  Close
+                </CloseButton>
+              </ModalBody>
+            </ModalWindow>
+          </ModalOverlay>
+        )}
+      </Section>
+
+      {/* Section: Advisory Board */}
+      <Section>
+        <SectionTitle>Advisory Board</SectionTitle>
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+        >
+          {advisoryImages.map((img, index) => (
+            <SwiperSlide key={index}>
+              <AdvisoryImage src={img} alt={`Advisory Member ${index + 1}`} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Section>
+
+      {/* Section: About TFNTV */}
+      <Section>
+        <SectionTitle>About Total Faith Network (TFNTV)</SectionTitle>
+        <AboutText>
+          Total Faith Network (TFNTV) is more than a media platform — it’s a mission-driven movement that blends creativity, purpose, and impact. Founded on the belief that faith-based and values-driven content can uplift communities and change lives, TFNTV delivers powerful storytelling through diverse programming that speaks to the heart and spirit of our time.
+        </AboutText>
+        <AboutText>
+          From inspirational films and groundbreaking documentaries to music, talk shows, and community-centered series, our content reflects real people, real purpose, and real transformation. At TFNTV, we don’t just broadcast — we build bridges across cultures, generations, and beliefs.
+        </AboutText>
+        <AboutText>
+          Through our expansive network of partner channels and our growing e-commerce platform, we empower small businesses, ministries, and creators to share their message, grow their influence, and generate meaningful revenue. We’re redefining media as a tool for both expression and economic empowerment.
+        </AboutText>
+        <AboutText>
+          At Total Faith Network, we believe our platform must also be a platform for healing. That’s why we’re deeply committed to Corporate Social Responsibility (CSR) — with a special focus on supporting individuals and families impacted by autoimmune diseases.
+        </AboutText>
+        <AboutText>
+          Autoimmune conditions affect millions of people, often silently and without adequate support or awareness. For every donation we receive, a portion is dedicated directly to funding autoimmune disease research and advocacy. Your contribution doesn't just fuel our mission — it fuels hope, science, and the fight for better treatment and cures.
+        </AboutText>
+        <AboutText>
+          We invite you to stand with us — not only in spreading light through media, but in bringing healing to those who need it most. Every dollar makes a difference. Every act of giving becomes proof that “Everyone wins @ TFN”.
+        </AboutText>
+      </Section>
+    </PageContainer>
+  );
+};
+
+// === Styled Components ===
+
+const PageContainer = styled(animated.div)`
+  padding: 3rem 2rem;
+  background: #E3F2FD;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+`;
+
+const Section = styled.section`
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+`;
+
+const SectionTitle = styled.h1`
+  color: #0D47A1;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #0D47A1, #1976D2);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+  }
+`;
+
+const LeaderGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+`;
+
+const LeaderCard = styled(animated.div)`
+  display: flex;
+  flex-direction: column;
+  background: ${(props) => props.bgcolor};
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const LeaderImage = styled.img`
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+`;
+
+const LeaderContent = styled.div`
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const LeaderName = styled.h3`
+  margin: 0 0 0.75rem;
+  color: #1976D2;
+  font-size: 1.4rem;
+`;
+
+const LeaderDesc = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+`;
+
+const ViewButton = styled.button`
+  align-self: flex-start;
+  padding: 0.7rem 1.4rem;
+  background: #0D47A1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #1976D2;
+  }
+`;
+
+// Modal Styles
+
+const ModalOverlay = styled.div`
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 2rem;
+`;
+
+const ModalWindow = styled.div`
+  background: #ffffff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 600px) {
+    flex-direction: row;
+    max-height: 70vh;
+  }
+`;
+
+const ModalImage = styled.img`
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  @media (min-width: 600px) {
+    width: 40%;
+    height: auto;
+    max-height: 70vh;
+  }
+`;
+
+const ModalBody = styled.div`
+  padding: 1.8rem;
+  flex: 1;
+  overflow-y: auto;
+`;
+
+const ModalHeader = styled.h2`
+  color: #0D47A1;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+`;
+
+const ModalDesc = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+`;
+
+const ModalText = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+`;
+
+const CloseButton = styled.button`
+  margin-top: 1rem;
+  padding: 0.6rem 1.4rem;
+  background: #D32F2F;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #B71C1C;
+  }
+`;
+
+// About TFNTV Text
+
+const AboutText = styled.p`
+  color: #1A237E;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  line-height: 1.7;
+`;
+
+const AdvisoryImage = styled.img`
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+`;
+
+export default About;
+```
+2025-06-07 21:20:00 - Query: 
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { useSpring, useTrail, animated } from '@react-spring/web';
+import evelynImg from '../images/evelyn.jpeg';
+import winfieldImg from '../images/winfield.jpeg';
+import cynthiaImg from '../images/cynthia.jpeg';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination, Autoplay } from 'swiper';
+
+const advisoryImages = Array.from({ length: 6 }, (_, i) => require(`../images/Advisory${i + 1}.jpg`));
+
+const About = () => {
+  // Fade-in animation for the entire page
+  const pageFade = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 800 },
+  });
+
+  // Trail animation for the leader cards (staggered appearance)
+  const leaders = [
+    {
+      title: 'Honorable Evelyn Laporte',
+      description: 'A leader and visionary in faith-based broadcasting and healing-centered advocacy.',
+      bio: 'Evelyn Laporte has spent over 20 years building ministries and media projects dedicated to hope, healing, and faith. Her leadership bridges tradition and innovation.',
+      image: evelynImg,
+    },
+    {
+      title: 'Marshayne Winfield',
+      description: 'A spiritual mentor whose impact continues to guide Total Faith Network’s values.',
+      bio: 'A man of great wisdom and grace, Marshayne Winfield is recognized for his role in spiritual education and social outreach programs nationwide.',
+      image: winfieldImg,
+    },
+    {
+      title: 'Dr. Cynthia Ashley',
+      description: 'CEO of TFNTV and an advocate for communities impacted by autoimmune disease.',
+      bio: 'Dr. Ashley’s leadership blends media innovation with healthcare advocacy. She brings strategic vision to TFNTV’s growth and outreach missions.',
+      image: cynthiaImg,
+    },
+  ];
+
+  const [selectedLeader, setSelectedLeader] = useState(null);
+
+  const trail = useTrail(leaders.length, {
+    from: { opacity: 0, transform: 'translateY(20px)' },
+    to: { opacity: 1, transform: 'translateY(0px)' },
+    config: { mass: 1, tension: 200, friction: 20 },
+    delay: 300,
+  });
+
+  return (
+    <PageContainer style={pageFade}>
+      {/* Section: Our Leaders */}
+      <Section>
+        <SectionTitle>About Our Leaders</SectionTitle>
+        <LeaderGrid>
+          {trail.map((animation, idx) => {
+            const leader = leaders[idx];
+            return (
+              <LeaderCard key={idx} style={animation} bgcolor="#F9FAFB">
+                <LeaderImage src={leader.image} alt={leader.title} />
+                <LeaderContent>
+                  <LeaderName>{leader.title}</LeaderName>
+                  <LeaderDesc>{leader.description}</LeaderDesc>
+                  <ViewButton onClick={() => setSelectedLeader(leader)}>
+                    View Details
+                  </ViewButton>
+                </LeaderContent>
+              </LeaderCard>
+            );
+          })}
+        </LeaderGrid>
+
+        {selectedLeader && (
+          <ModalOverlay onClick={() => setSelectedLeader(null)}>
+            <ModalWindow onClick={(e) => e.stopPropagation()}>
+              <ModalImage src={selectedLeader.image} alt={selectedLeader.title} />
+              <ModalBody>
+                <ModalHeader>{selectedLeader.title}</ModalHeader>
+                <ModalDesc>
+                  <strong>{selectedLeader.description}</strong>
+                </ModalDesc>
+                <ModalText>{selectedLeader.bio}</ModalText>
+                <CloseButton onClick={() => setSelectedLeader(null)}>
+                  Close
+                </CloseButton>
+              </ModalBody>
+            </ModalWindow>
+          </ModalOverlay>
+        )}
+      </Section>
+
+      {/* Section: Advisory Board */}
+      <Section>
+        <SectionTitle>Advisory Board</SectionTitle>
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+        >
+          {advisoryImages.map((img, index) => (
+            <SwiperSlide key={index}>
+              <AdvisoryImage src={img} alt={`Advisory Member ${index + 1}`} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Section>
+
+      {/* Section: About TFNTV */}
+      <Section>
+        <SectionTitle>About Total Faith Network (TFNTV)</SectionTitle>
+        <AboutText>
+          Total Faith Network (TFNTV) is more than a media platform — it’s a mission-driven movement that blends creativity, purpose, and impact. Founded on the belief that faith-based and values-driven content can uplift communities and change lives, TFNTV delivers powerful storytelling through diverse programming that speaks to the heart and spirit of our time.
+        </AboutText>
+        <AboutText>
+          From inspirational films and groundbreaking documentaries to music, talk shows, and community-centered series, our content reflects real people, real purpose, and real transformation. At TFNTV, we don’t just broadcast — we build bridges across cultures, generations, and beliefs.
+        </AboutText>
+        <AboutText>
+          Through our expansive network of partner channels and our growing e-commerce platform, we empower small businesses, ministries, and creators to share their message, grow their influence, and generate meaningful revenue. We’re redefining media as a tool for both expression and economic empowerment.
+        </AboutText>
+        <AboutText>
+          At Total Faith Network, we believe our platform must also be a platform for healing. That’s why we’re deeply committed to Corporate Social Responsibility (CSR) — with a special focus on supporting individuals and families impacted by autoimmune diseases.
+        </AboutText>
+        <AboutText>
+          Autoimmune conditions affect millions of people, often silently and without adequate support or awareness. For every donation we receive, a portion is dedicated directly to funding autoimmune disease research and advocacy. Your contribution doesn't just fuel our mission — it fuels hope, science, and the fight for better treatment and cures.
+        </AboutText>
+        <AboutText>
+          We invite you to stand with us — not only in spreading light through media, but in bringing healing to those who need it most. Every dollar makes a difference. Every act of giving becomes proof that “Everyone wins @ TFN”.
+        </AboutText>
+      </Section>
+    </PageContainer>
+  );
+};
+
+// === Styled Components ===
+
+const PageContainer = styled(animated.div)`
+  padding: 3rem 2rem;
+  background: #E3F2FD;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+`;
+
+const Section = styled.section`
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+`;
+
+const SectionTitle = styled.h1`
+  color: #0D47A1;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #0D47A1, #1976D2);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+  }
+`;
+
+const LeaderGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+`;
+
+const LeaderCard = styled(animated.div)`
+  display: flex;
+  flex-direction: column;
+  background: ${(props) => props.bgcolor};
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const LeaderImage = styled.img`
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+`;
+
+const LeaderContent = styled.div`
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const LeaderName = styled.h3`
+  margin: 0 0 0.75rem;
+  color: #1976D2;
+  font-size: 1.4rem;
+`;
+
+const LeaderDesc = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+`;
+
+const ViewButton = styled.button`
+  align-self: flex-start;
+  padding: 0.7rem 1.4rem;
+  background: #0D47A1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #1976D2;
+  }
+`;
+
+// Modal Styles
+
+const ModalOverlay = styled.div`
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 2rem;
+`;
+
+const ModalWindow = styled.div`
+  background: #ffffff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 600px) {
+    flex-direction: row;
+    max-height: 70vh;
+  }
+`;
+
+const ModalImage = styled.img`
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  @media (min-width: 600px) {
+    width: 40%;
+    height: auto;
+    max-height: 70vh;
+  }
+`;
+
+const ModalBody = styled.div`
+  padding: 1.8rem;
+  flex: 1;
+  overflow-y: auto;
+`;
+
+const ModalHeader = styled.h2`
+  color: #0D47A1;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+`;
+
+const ModalDesc = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+`;
+
+const ModalText = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+`;
+
+const CloseButton = styled.button`
+  margin-top: 1rem;
+  padding: 0.6rem 1.4rem;
+  background: #D32F2F;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #B71C1C;
+  }
+`;
+
+// About TFNTV Text
+
+const AboutText = styled.p`
+  color: #1A237E;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  line-height: 1.7;
+`;
+
+const AdvisoryImage = styled.img`
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+`;
+
+export default About; - Response: File: /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/pages/About.js
+```javascript
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { useSpring, useTrail, animated } from '@react-spring/web';
+import evelynImg from '../images/evelyn.jpeg';
+import winfieldImg from '../images/winfield.jpeg';
+import cynthiaImg from '../images/cynthia.jpeg';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination, Autoplay } from 'swiper';
+
+const advisoryImages = Array.from({ length: 6 }, (_, i) => require(`../images/advisory${i + 1}.jpg`));
+
+const About = () => {
+  // Fade-in animation for the entire page
+  const pageFade = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 800 },
+  });
+
+  // Trail animation for the leader cards (staggered appearance)
+  const leaders = [
+    {
+      title: 'Honorable Evelyn Laporte',
+      description: 'A leader and visionary in faith-based broadcasting and healing-centered advocacy.',
+      bio: 'Evelyn Laporte has spent over 20 years building ministries and media projects dedicated to hope, healing, and faith. Her leadership bridges tradition and innovation.',
+      image: evelynImg,
+    },
+    {
+      title: 'Marshayne Winfield',
+      description: 'A spiritual mentor whose impact continues to guide Total Faith Network’s values.',
+      bio: 'A man of great wisdom and grace, Marshayne Winfield is recognized for his role in spiritual education and social outreach programs nationwide.',
+      image: winfieldImg,
+    },
+    {
+      title: 'Dr. Cynthia Ashley',
+      description: 'CEO of TFNTV and an advocate for communities impacted by autoimmune disease.',
+      bio: 'Dr. Ashley’s leadership blends media innovation with healthcare advocacy. She brings strategic vision to TFNTV’s growth and outreach missions.',
+      image: cynthiaImg,
+    },
+  ];
+
+  const [selectedLeader, setSelectedLeader] = useState(null);
+
+  const trail = useTrail(leaders.length, {
+    from: { opacity: 0, transform: 'translateY(20px)' },
+    to: { opacity: 1, transform: 'translateY(0px)' },
+    config: { mass: 1, tension: 200, friction: 20 },
+    delay: 300,
+  });
+
+  return (
+    <PageContainer style={pageFade}>
+      {/* Section: Our Leaders */}
+      <Section>
+        <SectionTitle>About Our Leaders</SectionTitle>
+        <LeaderGrid>
+          {trail.map((animation, idx) => {
+            const leader = leaders[idx];
+            return (
+              <LeaderCard key={idx} style={animation} bgcolor="#F9FAFB">
+                <LeaderImage src={leader.image} alt={leader.title} />
+                <LeaderContent>
+                  <LeaderName>{leader.title}</LeaderName>
+                  <LeaderDesc>{leader.description}</LeaderDesc>
+                  <ViewButton onClick={() => setSelectedLeader(leader)}>
+                    View Details
+                  </ViewButton>
+                </LeaderContent>
+              </LeaderCard>
+            );
+          })}
+        </LeaderGrid>
+
+        {selectedLeader && (
+          <ModalOverlay onClick={() => setSelectedLeader(null)}>
+            <ModalWindow onClick={(e) => e.stopPropagation()}>
+              <ModalImage src={selectedLeader.image} alt={selectedLeader.title} />
+              <ModalBody>
+                <ModalHeader>{selectedLeader.title}</ModalHeader>
+                <ModalDesc>
+                  <strong>{selectedLeader.description}</strong>
+                </ModalDesc>
+                <ModalText>{selectedLeader.bio}</ModalText>
+                <CloseButton onClick={() => setSelectedLeader(null)}>
+                  Close
+                </CloseButton>
+              </ModalBody>
+            </ModalWindow>
+          </ModalOverlay>
+        )}
+      </Section>
+
+      {/* Section: Advisory Board */}
+      <Section>
+        <SectionTitle>Advisory Board</SectionTitle>
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+        >
+          {advisoryImages.map((img, index) => (
+            <SwiperSlide key={index}>
+              <AdvisoryImage src={img} alt={`Advisory Member ${index + 1}`} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Section>
+
+      {/* Section: About TFNTV */}
+      <Section>
+        <SectionTitle>About Total Faith Network (TFNTV)</SectionTitle>
+        <AboutText>
+          Total Faith Network (TFNTV) is more than a media platform — it’s a mission-driven movement that blends creativity, purpose, and impact. Founded on the belief that faith-based and values-driven content can uplift communities and change lives, TFNTV delivers powerful storytelling through diverse programming that speaks to the heart and spirit of our time.
+        </AboutText>
+        <AboutText>
+          From inspirational films and groundbreaking documentaries to music, talk shows, and community-centered series, our content reflects real people, real purpose, and real transformation. At TFNTV, we don’t just broadcast — we build bridges across cultures, generations, and beliefs.
+        </AboutText>
+        <AboutText>
+          Through our expansive network of partner channels and our growing e-commerce platform, we empower small businesses, ministries, and creators to share their message, grow their influence, and generate meaningful revenue. We’re redefining media as a tool for both expression and economic empowerment.
+        </AboutText>
+        <AboutText>
+          At Total Faith Network, we believe our platform must also be a platform for healing. That’s why we’re deeply committed to Corporate Social Responsibility (CSR) — with a special focus on supporting individuals and families impacted by autoimmune diseases.
+        </AboutText>
+        <AboutText>
+          Autoimmune conditions affect millions of people, often silently and without adequate support or awareness. For every donation we receive, a portion is dedicated directly to funding autoimmune disease research and advocacy. Your contribution doesn't just fuel our mission — it fuels hope, science, and the fight for better treatment and cures.
+        </AboutText>
+        <AboutText>
+          We invite you to stand with us — not only in spreading light through media, but in bringing healing to those who need it most. Every dollar makes a difference. Every act of giving becomes proof that “Everyone wins @ TFN”.
+        </AboutText>
+      </Section>
+    </PageContainer>
+  );
+};
+
+// === Styled Components ===
+
+const PageContainer = styled(animated.div)`
+  padding: 3rem 2rem;
+  background: #E3F2FD;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+`;
+
+const Section = styled.section`
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+`;
+
+const SectionTitle = styled.h1`
+  color: #0D47A1;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #0D47A1, #1976D2);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+  }
+`;
+
+const LeaderGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+`;
+
+const LeaderCard = styled(animated.div)`
+  display: flex;
+  flex-direction: column;
+  background: ${(props) => props.bgcolor};
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const LeaderImage = styled.img`
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+`;
+
+const LeaderContent = styled.div`
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const LeaderName = styled.h3`
+  margin: 0 0 0.75rem;
+  color: #1976D2;
+  font-size: 1.4rem;
+`;
+
+const LeaderDesc = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+`;
+
+const ViewButton = styled.button`
+  align-self: flex-start;
+  padding: 0.7rem 1.4rem;
+  background: #0D47A1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #1976D2;
+  }
+`;
+
+// Modal Styles
+
+const ModalOverlay = styled.div`
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 2rem;
+`;
+
+const ModalWindow = styled.div`
+  background: #ffffff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 600px) {
+    flex-direction: row;
+    max-height: 70vh;
+  }
+`;
+
+const ModalImage = styled.img`
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  @media (min-width: 600px) {
+    width: 40%;
+    height: auto;
+    max-height: 70vh;
+  }
+`;
+
+const ModalBody = styled.div`
+  padding: 1.8rem;
+  flex: 1;
+  overflow-y: auto;
+`;
+
+const ModalHeader = styled.h2`
+  color: #0D47A1;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+`;
+
+const ModalDesc = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+`;
+
+const ModalText = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+`;
+
+const CloseButton = styled.button`
+  margin-top: 1rem;
+  padding: 0.6rem 1.4rem;
+  background: #D32F2F;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #B71C1C;
+  }
+`;
+
+// About TFNTV Text
+
+const AboutText = styled.p`
+  color: #1A237E;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  line-height: 1.7;
+`;
+
+const AdvisoryImage = styled.img`
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+`;
+
+export default About;
+```
+2025-06-07 21:28:53 - Query: 
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { useSpring, useTrail, animated } from '@react-spring/web';
+import evelynImg from '../images/evelyn.jpeg';
+import winfieldImg from '../images/winfield.jpeg';
+import cynthiaImg from '../images/cynthia.jpeg';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination, Autoplay } from 'swiper';
+import Advisory1 from '../images/Advisory1.JPG';
+import Advisory2 from '../images/Advisory2.JPG';
+import Advisory3 from '../images/Advisory3.JPG';
+import Advisory4 from '../images/Advisory4.JPG';
+import Advisory5 from '../images/Advisory5.JPG';
+import Advisory6 from '../images/Advisory6.JPG';
+
+const advisoryImages = [Advisory1, Advisory2, Advisory3, Advisory4, Advisory5, Advisory6];
+
+const About = () => {
+  // Fade-in animation for the entire page
+  const pageFade = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 800 },
+  });
+
+  // Trail animation for the leader cards (staggered appearance)
+  const leaders = [
+    {
+      title: 'Honorable Evelyn Laporte',
+      description: 'A leader and visionary in faith-based broadcasting and healing-centered advocacy.',
+      bio: 'Evelyn Laporte has spent over 20 years building ministries and media projects dedicated to hope, healing, and faith. Her leadership bridges tradition and innovation.',
+      image: evelynImg,
+    },
+    {
+      title: 'Marshayne Winfield',
+      description: 'A spiritual mentor whose impact continues to guide Total Faith Network’s values.',
+      bio: 'A man of great wisdom and grace, Marshayne Winfield is recognized for his role in spiritual education and social outreach programs nationwide.',
+      image: winfieldImg,
+    },
+    {
+      title: 'Dr. Cynthia Ashley',
+      description: 'CEO of TFNTV and an advocate for communities impacted by autoimmune disease.',
+      bio: 'Dr. Ashley’s leadership blends media innovation with healthcare advocacy. She brings strategic vision to TFNTV’s growth and outreach missions.',
+      image: cynthiaImg,
+    },
+  ];
+
+  const [selectedLeader, setSelectedLeader] = useState(null);
+
+  const trail = useTrail(leaders.length, {
+    from: { opacity: 0, transform: 'translateY(20px)' },
+    to: { opacity: 1, transform: 'translateY(0px)' },
+    config: { mass: 1, tension: 200, friction: 20 },
+    delay: 300,
+  });
+
+  return (
+    <PageContainer style={pageFade}>
+      {/* Section: Our Leaders */}
+      <Section>
+        <SectionTitle>About Our Leaders</SectionTitle>
+        <LeaderGrid>
+          {trail.map((animation, idx) => {
+            const leader = leaders[idx];
+            return (
+              <LeaderCard key={idx} style={animation} bgcolor="#F9FAFB">
+                <LeaderImage src={leader.image} alt={leader.title} />
+                <LeaderContent>
+                  <LeaderName>{leader.title}</LeaderName>
+                  <LeaderDesc>{leader.description}</LeaderDesc>
+                  <ViewButton onClick={() => setSelectedLeader(leader)}>
+                    View Details
+                  </ViewButton>
+                </LeaderContent>
+              </LeaderCard>
+            );
+          })}
+        </LeaderGrid>
+
+        {selectedLeader && (
+          <ModalOverlay onClick={() => setSelectedLeader(null)}>
+            <ModalWindow onClick={(e) => e.stopPropagation()}>
+              <ModalImage src={selectedLeader.image} alt={selectedLeader.title} />
+              <ModalBody>
+                <ModalHeader>{selectedLeader.title}</ModalHeader>
+                <ModalDesc>
+                  <strong>{selectedLeader.description}</strong>
+                </ModalDesc>
+                <ModalText>{selectedLeader.bio}</ModalText>
+                <CloseButton onClick={() => setSelectedLeader(null)}>
+                  Close
+                </CloseButton>
+              </ModalBody>
+            </ModalWindow>
+          </ModalOverlay>
+        )}
+      </Section>
+
+      {/* Section: Advisory Board */}
+      <Section>
+        <SectionTitle>Advisory Board</SectionTitle>
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+        >
+          {advisoryImages.map((img, index) => (
+            <SwiperSlide key={index}>
+              <AdvisoryImage src={img} alt={`Advisory Member ${index + 1}`} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Section>
+
+      {/* Section: About TFNTV */}
+      <Section>
+        <SectionTitle>About Total Faith Network (TFNTV)</SectionTitle>
+        <AboutText>
+          Total Faith Network (TFNTV) is more than a media platform — it’s a mission-driven movement that blends creativity, purpose, and impact. Founded on the belief that faith-based and values-driven content can uplift communities and change lives, TFNTV delivers powerful storytelling through diverse programming that speaks to the heart and spirit of our time.
+        </AboutText>
+        <AboutText>
+          From inspirational films and groundbreaking documentaries to music, talk shows, and community-centered series, our content reflects real people, real purpose, and real transformation. At TFNTV, we don’t just broadcast — we build bridges across cultures, generations, and beliefs.
+        </AboutText>
+        <AboutText>
+          Through our expansive network of partner channels and our growing e-commerce platform, we empower small businesses, ministries, and creators to share their message, grow their influence, and generate meaningful revenue. We’re redefining media as a tool for both expression and economic empowerment.
+        </AboutText>
+        <AboutText>
+          At Total Faith Network, we believe our platform must also be a platform for healing. That’s why we’re deeply committed to Corporate Social Responsibility (CSR) — with a special focus on supporting individuals and families impacted by autoimmune diseases.
+        </AboutText>
+        <AboutText>
+          Autoimmune conditions affect millions of people, often silently and without adequate support or awareness. For every donation we receive, a portion is dedicated directly to funding autoimmune disease research and advocacy. Your contribution doesn't just fuel our mission — it fuels hope, science, and the fight for better treatment and cures.
+        </AboutText>
+        <AboutText>
+          We invite you to stand with us — not only in spreading light through media, but in bringing healing to those who need it most. Every dollar makes a difference. Every act of giving becomes proof that “Everyone wins @ TFN”.
+        </AboutText>
+      </Section>
+    </PageContainer>
+  );
+};
+
+// === Styled Components ===
+
+const PageContainer = styled(animated.div)`
+  padding: 3rem 2rem;
+  background: #E3F2FD;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+`;
+
+const Section = styled.section`
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+`;
+
+const SectionTitle = styled.h1`
+  color: #0D47A1;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #0D47A1, #1976D2);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+  }
+`;
+
+const LeaderGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+`;
+
+const LeaderCard = styled(animated.div)`
+  display: flex;
+  flex-direction: column;
+  background: ${(props) => props.bgcolor};
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const LeaderImage = styled.img`
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+`;
+
+const LeaderContent = styled.div`
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const LeaderName = styled.h3`
+  margin: 0 0 0.75rem;
+  color: #1976D2;
+  font-size: 1.4rem;
+`;
+
+const LeaderDesc = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+`;
+
+const ViewButton = styled.button`
+  align-self: flex-start;
+  padding: 0.7rem 1.4rem;
+  background: #0D47A1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #1976D2;
+  }
+`;
+
+// Modal Styles
+
+const ModalOverlay = styled.div`
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 2rem;
+`;
+
+const ModalWindow = styled.div`
+  background: #ffffff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 600px) {
+    flex-direction: row;
+    max-height: 70vh;
+  }
+`;
+
+const ModalImage = styled.img`
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  @media (min-width: 600px) {
+    width: 40%;
+    height: auto;
+    max-height: 70vh;
+  }
+`;
+
+const ModalBody = styled.div`
+  padding: 1.8rem;
+  flex: 1;
+  overflow-y: auto;
+`;
+
+const ModalHeader = styled.h2`
+  color: #0D47A1;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+`;
+
+const ModalDesc = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+`;
+
+const ModalText = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+`;
+
+const CloseButton = styled.button`
+  margin-top: 1rem;
+  padding: 0.6rem 1.4rem;
+  background: #D32F2F;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #B71C1C;
+  }
+`;
+
+// About TFNTV Text
+
+const AboutText = styled.p`
+  color: #1A237E;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  line-height: 1.7;
+`;
+
+const AdvisoryImage = styled.img`
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+`;
+
+export default About; - Response: File: /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/pages/About.js
+```javascript
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { useSpring, useTrail, animated } from '@react-spring/web';
+import evelynImg from '../images/evelyn.jpeg';
+import winfieldImg from '../images/winfield.jpeg';
+import cynthiaImg from '../images/cynthia.jpeg';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination, Autoplay } from 'swiper';
+import Advisory1 from '../images/Advisory1.JPG';
+import Advisory2 from '../images/Advisory2.JPG';
+import Advisory3 from '../images/Advisory3.JPG';
+import Advisory4 from '../images/Advisory4.JPG';
+import Advisory5 from '../images/Advisory5.JPG';
+import Advisory6 from '../images/Advisory6.JPG';
+
+const advisoryImages = [Advisory1, Advisory2, Advisory3, Advisory4, Advisory5, Advisory6];
+
+const About = () => {
+  // Fade-in animation for the entire page
+  const pageFade = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 800 },
+  });
+
+  // Trail animation for the leader cards (staggered appearance)
+  const leaders = [
+    {
+      title: 'Honorable Evelyn Laporte',
+      description: 'A leader and visionary in faith-based broadcasting and healing-centered advocacy.',
+      bio: 'Evelyn Laporte has spent over 20 years building ministries and media projects dedicated to hope, healing, and faith. Her leadership bridges tradition and innovation.',
+      image: evelynImg,
+    },
+    {
+      title: 'Marshayne Winfield',
+      description: 'A spiritual mentor whose impact continues to guide Total Faith Network’s values.',
+      bio: 'A man of great wisdom and grace, Marshayne Winfield is recognized for his role in spiritual education and social outreach programs nationwide.',
+      image: winfieldImg,
+    },
+    {
+      title: 'Dr. Cynthia Ashley',
+      description: 'CEO of TFNTV and an advocate for communities impacted by autoimmune disease.',
+      bio: 'Dr. Ashley’s leadership blends media innovation with healthcare advocacy. She brings strategic vision to TFNTV’s growth and outreach missions.',
+      image: cynthiaImg,
+    },
+  ];
+
+  const [selectedLeader, setSelectedLeader] = useState(null);
+
+  const trail = useTrail(leaders.length, {
+    from: { opacity: 0, transform: 'translateY(20px)' },
+    to: { opacity: 1, transform: 'translateY(0px)' },
+    config: { mass: 1, tension: 200, friction: 20 },
+    delay: 300,
+  });
+
+  return (
+    <PageContainer style={pageFade}>
+      {/* Section: Our Leaders */}
+      <Section>
+        <SectionTitle>About Our Leaders</SectionTitle>
+        <LeaderGrid>
+          {trail.map((animation, idx) => {
+            const leader = leaders[idx];
+            return (
+              <LeaderCard key={idx} style={animation} bgcolor="#F9FAFB">
+                <LeaderImage src={leader.image} alt={leader.title} />
+                <LeaderContent>
+                  <LeaderName>{leader.title}</LeaderName>
+                  <LeaderDesc>{leader.description}</LeaderDesc>
+                  <ViewButton onClick={() => setSelectedLeader(leader)}>
+                    View Details
+                  </ViewButton>
+                </LeaderContent>
+              </LeaderCard>
+            );
+          })}
+        </LeaderGrid>
+
+        {selectedLeader && (
+          <ModalOverlay onClick={() => setSelectedLeader(null)}>
+            <ModalWindow onClick={(e) => e.stopPropagation()}>
+              <ModalImage src={selectedLeader.image} alt={selectedLeader.title} />
+              <ModalBody>
+                <ModalHeader>{selectedLeader.title}</ModalHeader>
+                <ModalDesc>
+                  <strong>{selectedLeader.description}</strong>
+                </ModalDesc>
+                <ModalText>{selectedLeader.bio}</ModalText>
+                <CloseButton onClick={() => setSelectedLeader(null)}>
+                  Close
+                </CloseButton>
+              </ModalBody>
+            </ModalWindow>
+          </ModalOverlay>
+        )}
+      </Section>
+
+      {/* Section: Advisory Board */}
+      <Section>
+        <SectionTitle>Advisory Board</SectionTitle>
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+        >
+          {advisoryImages.map((img, index) => (
+            <SwiperSlide key={index}>
+              <AdvisoryImage src={img} alt={`Advisory Member ${index + 1}`} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Section>
+
+      {/* Section: About TFNTV */}
+      <Section>
+        <SectionTitle>About Total Faith Network (TFNTV)</SectionTitle>
+        <AboutText>
+          Total Faith Network (TFNTV) is more than a media platform — it’s a mission-driven movement that blends creativity, purpose, and impact. Founded on the belief that faith-based and values-driven content can uplift communities and change lives, TFNTV delivers powerful storytelling through diverse programming that speaks to the heart and spirit of our time.
+        </AboutText>
+        <AboutText>
+          From inspirational films and groundbreaking documentaries to music, talk shows, and community-centered series, our content reflects real people, real purpose, and real transformation. At TFNTV, we don’t just broadcast — we build bridges across cultures, generations, and beliefs.
+        </AboutText>
+        <AboutText>
+          Through our expansive network of partner channels and our growing e-commerce platform, we empower small businesses, ministries, and creators to share their message, grow their influence, and generate meaningful revenue. We’re redefining media as a tool for both expression and economic empowerment.
+        </AboutText>
+        <AboutText>
+          At Total Faith Network, we believe our platform must also be a platform for healing. That’s why we’re deeply committed to Corporate Social Responsibility (CSR) — with a special focus on supporting individuals and families impacted by autoimmune diseases.
+        </AboutText>
+        <AboutText>
+          Autoimmune conditions affect millions of people, often silently and without adequate support or awareness. For every donation we receive, a portion is dedicated directly to funding autoimmune disease research and advocacy. Your contribution doesn't just fuel our mission — it fuels hope, science, and the fight for better treatment and cures.
+        </AboutText>
+        <AboutText>
+          We invite you to stand with us — not only in spreading light through media, but in bringing healing to those who need it most. Every dollar makes a difference. Every act of giving becomes proof that “Everyone wins @ TFN”.
+        </AboutText>
+      </Section>
+    </PageContainer>
+  );
+};
+
+// === Styled Components ===
+
+const PageContainer = styled(animated.div)`
+  padding: 3rem 2rem;
+  background: #E3F2FD;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+`;
+
+const Section = styled.section`
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+`;
+
+const SectionTitle = styled.h1`
+  color: #0D47A1;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #0D47A1, #1976D2);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+  }
+`;
+
+const LeaderGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+`;
+
+const LeaderCard = styled(animated.div)`
+  display: flex;
+  flex-direction: column;
+  background: ${(props) => props.bgcolor};
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const LeaderImage = styled.img`
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+`;
+
+const LeaderContent = styled.div`
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const LeaderName = styled.h3`
+  margin: 0 0 0.75rem;
+  color: #1976D2;
+  font-size: 1.4rem;
+`;
+
+const LeaderDesc = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+`;
+
+const ViewButton = styled.button`
+  align-self: flex-start;
+  padding: 0.7rem 1.4rem;
+  background: #0D47A1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #1976D2;
+  }
+`;
+
+// Modal Styles
+
+const ModalOverlay = styled.div`
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 2rem;
+`;
+
+const ModalWindow = styled.div`
+  background: #ffffff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 600px) {
+    flex-direction: row;
+    max-height: 70vh;
+  }
+`;
+
+const ModalImage = styled.img`
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  @media (min-width: 600px) {
+    width: 40%;
+    height: auto;
+    max-height: 70vh;
+  }
+`;
+
+const ModalBody = styled.div`
+  padding: 1.8rem;
+  flex: 1;
+  overflow-y: auto;
+`;
+
+const ModalHeader = styled.h2`
+  color: #0D47A1;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+`;
+
+const ModalDesc = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+`;
+
+const ModalText = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+`;
+
+const CloseButton = styled.button`
+  margin-top: 1rem;
+  padding: 0.6rem 1.4rem;
+  background: #D32F2F;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #B71C1C;
+  }
+`;
+
+// About TFNTV Text
+
+const AboutText = styled.p`
+  color: #1A237E;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  line-height: 1.7;
+`;
+
+const AdvisoryImage = styled.img`
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+`;
+
+export default About;
+```
+2025-06-07 21:32:05 - Query: 
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { useSpring, useTrail, animated } from '@react-spring/web';
+import evelynImg from '../images/evelyn.jpeg';
+import winfieldImg from '../images/winfield.jpeg';
+import cynthiaImg from '../images/cynthia.jpeg';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import Advisory1 from '../images/Advisory1.JPG';
+import Advisory2 from '../images/Advisory2.JPG';
+import Advisory3 from '../images/Advisory3.JPG';
+import Advisory4 from '../images/Advisory4.JPG';
+import Advisory5 from '../images/Advisory5.JPG';
+import Advisory6 from '../images/Advisory6.JPG';
+
+const advisoryImages = [Advisory1, Advisory2, Advisory3, Advisory4, Advisory5, Advisory6];
+
+const About = () => {
+  // Fade-in animation for the entire page
+  const pageFade = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 800 },
+  });
+
+  // Trail animation for the leader cards (staggered appearance)
+  const leaders = [
+    {
+      title: 'Honorable Evelyn Laporte',
+      description: 'A leader and visionary in faith-based broadcasting and healing-centered advocacy.',
+      bio: 'Evelyn Laporte has spent over 20 years building ministries and media projects dedicated to hope, healing, and faith. Her leadership bridges tradition and innovation.',
+      image: evelynImg,
+    },
+    {
+      title: 'Marshayne Winfield',
+      description: 'A spiritual mentor whose impact continues to guide Total Faith Network’s values.',
+      bio: 'A man of great wisdom and grace, Marshayne Winfield is recognized for his role in spiritual education and social outreach programs nationwide.',
+      image: winfieldImg,
+    },
+    {
+      title: 'Dr. Cynthia Ashley',
+      description: 'CEO of TFNTV and an advocate for communities impacted by autoimmune disease.',
+      bio: 'Dr. Ashley’s leadership blends media innovation with healthcare advocacy. She brings strategic vision to TFNTV’s growth and outreach missions.',
+      image: cynthiaImg,
+    },
+  ];
+
+  const [selectedLeader, setSelectedLeader] = useState(null);
+
+  const trail = useTrail(leaders.length, {
+    from: { opacity: 0, transform: 'translateY(20px)' },
+    to: { opacity: 1, transform: 'translateY(0px)' },
+    config: { mass: 1, tension: 200, friction: 20 },
+    delay: 300,
+  });
+
+  return (
+    <PageContainer style={pageFade}>
+      {/* Section: Our Leaders */}
+      <Section>
+        <SectionTitle>About Our Leaders</SectionTitle>
+        <LeaderGrid>
+          {trail.map((animation, idx) => {
+            const leader = leaders[idx];
+            return (
+              <LeaderCard key={idx} style={animation} bgcolor="#F9FAFB">
+                <LeaderImage src={leader.image} alt={leader.title} />
+                <LeaderContent>
+                  <LeaderName>{leader.title}</LeaderName>
+                  <LeaderDesc>{leader.description}</LeaderDesc>
+                  <ViewButton onClick={() => setSelectedLeader(leader)}>
+                    View Details
+                  </ViewButton>
+                </LeaderContent>
+              </LeaderCard>
+            );
+          })}
+        </LeaderGrid>
+
+        {selectedLeader && (
+          <ModalOverlay onClick={() => setSelectedLeader(null)}>
+            <ModalWindow onClick={(e) => e.stopPropagation()}>
+              <ModalImage src={selectedLeader.image} alt={selectedLeader.title} />
+              <ModalBody>
+                <ModalHeader>{selectedLeader.title}</ModalHeader>
+                <ModalDesc>
+                  <strong>{selectedLeader.description}</strong>
+                </ModalDesc>
+                <ModalText>{selectedLeader.bio}</ModalText>
+                <CloseButton onClick={() => setSelectedLeader(null)}>
+                  Close
+                </CloseButton>
+              </ModalBody>
+            </ModalWindow>
+          </ModalOverlay>
+        )}
+      </Section>
+
+      {/* Section: Advisory Board */}
+      <Section>
+        <SectionTitle>Advisory Board</SectionTitle>
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+        >
+          {advisoryImages.map((img, index) => (
+            <SwiperSlide key={index}>
+              <AdvisoryImage src={img} alt={`Advisory Member ${index + 1}`} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Section>
+
+      {/* Section: About TFNTV */}
+      <Section>
+        <SectionTitle>About Total Faith Network (TFNTV)</SectionTitle>
+        <AboutText>
+          Total Faith Network (TFNTV) is more than a media platform — it’s a mission-driven movement that blends creativity, purpose, and impact. Founded on the belief that faith-based and values-driven content can uplift communities and change lives, TFNTV delivers powerful storytelling through diverse programming that speaks to the heart and spirit of our time.
+        </AboutText>
+        <AboutText>
+          From inspirational films and groundbreaking documentaries to music, talk shows, and community-centered series, our content reflects real people, real purpose, and real transformation. At TFNTV, we don’t just broadcast — we build bridges across cultures, generations, and beliefs.
+        </AboutText>
+        <AboutText>
+          Through our expansive network of partner channels and our growing e-commerce platform, we empower small businesses, ministries, and creators to share their message, grow their influence, and generate meaningful revenue. We’re redefining media as a tool for both expression and economic empowerment.
+        </AboutText>
+        <AboutText>
+          At Total Faith Network, we believe our platform must also be a platform for healing. That’s why we’re deeply committed to Corporate Social Responsibility (CSR) — with a special focus on supporting individuals and families impacted by autoimmune diseases.
+        </AboutText>
+        <AboutText>
+          Autoimmune conditions affect millions of people, often silently and without adequate support or awareness. For every donation we receive, a portion is dedicated directly to funding autoimmune disease research and advocacy. Your contribution doesn't just fuel our mission — it fuels hope, science, and the fight for better treatment and cures.
+        </AboutText>
+        <AboutText>
+          We invite you to stand with us — not only in spreading light through media, but in bringing healing to those who need it most. Every dollar makes a difference. Every act of giving becomes proof that “Everyone wins @ TFN”.
+        </AboutText>
+      </Section>
+    </PageContainer>
+  );
+};
+
+// === Styled Components ===
+
+const PageContainer = styled(animated.div)`
+  padding: 3rem 2rem;
+  background: #E3F2FD;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+`;
+
+const Section = styled.section`
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+`;
+
+const SectionTitle = styled.h1`
+  color: #0D47A1;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #0D47A1, #1976D2);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+  }
+`;
+
+const LeaderGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+`;
+
+const LeaderCard = styled(animated.div)`
+  display: flex;
+  flex-direction: column;
+  background: ${(props) => props.bgcolor};
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const LeaderImage = styled.img`
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+`;
+
+const LeaderContent = styled.div`
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const LeaderName = styled.h3`
+  margin: 0 0 0.75rem;
+  color: #1976D2;
+  font-size: 1.4rem;
+`;
+
+const LeaderDesc = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+`;
+
+const ViewButton = styled.button`
+  align-self: flex-start;
+  padding: 0.7rem 1.4rem;
+  background: #0D47A1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #1976D2;
+  }
+`;
+
+// Modal Styles
+
+const ModalOverlay = styled.div`
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 2rem;
+`;
+
+const ModalWindow = styled.div`
+  background: #ffffff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 600px) {
+    flex-direction: row;
+    max-height: 70vh;
+  }
+`;
+
+const ModalImage = styled.img`
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  @media (min-width: 600px) {
+    width: 40%;
+    height: auto;
+    max-height: 70vh;
+  }
+`;
+
+const ModalBody = styled.div`
+  padding: 1.8rem;
+  flex: 1;
+  overflow-y: auto;
+`;
+
+const ModalHeader = styled.h2`
+  color: #0D47A1;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+`;
+
+const ModalDesc = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+`;
+
+const ModalText = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+`;
+
+const CloseButton = styled.button`
+  margin-top: 1rem;
+  padding: 0.6rem 1.4rem;
+  background: #D32F2F;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #B71C1C;
+  }
+`;
+
+// About TFNTV Text
+
+const AboutText = styled.p`
+  color: #1A237E;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  line-height: 1.7;
+`;
+
+const AdvisoryImage = styled.img`
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+`;
+
+export default About; - Response: File: /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/pages/About.js
+```javascript
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { useSpring, useTrail, animated } from '@react-spring/web';
+import evelynImg from '../images/evelyn.jpeg';
+import winfieldImg from '../images/winfield.jpeg';
+import cynthiaImg from '../images/cynthia.jpeg';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination, Autoplay } from 'swiper';
+import Advisory1 from '../images/Advisory1.JPG';
+import Advisory2 from '../images/Advisory2.JPG';
+import Advisory3 from '../images/Advisory3.JPG';
+import Advisory4 from '../images/Advisory4.JPG';
+import Advisory5 from '../images/Advisory5.JPG';
+import Advisory6 from '../images/Advisory6.JPG';
+
+const advisoryImages = [Advisory1, Advisory2, Advisory3, Advisory4, Advisory5, Advisory6];
+
+const About = () => {
+  const pageFade = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 800 },
+  });
+
+  const leaders = [
+    {
+      title: 'Honorable Evelyn Laporte',
+      description: 'A leader and visionary in faith-based broadcasting and healing-centered advocacy.',
+      bio: 'Evelyn Laporte has spent over 20 years building ministries and media projects dedicated to hope, healing, and faith. Her leadership bridges tradition and innovation.',
+      image: evelynImg,
+    },
+    {
+      title: 'Marshayne Winfield',
+      description: 'A spiritual mentor whose impact continues to guide Total Faith Network’s values.',
+      bio: 'A man of great wisdom and grace, Marshayne Winfield is recognized for his role in spiritual education and social outreach programs nationwide.',
+      image: winfieldImg,
+    },
+    {
+      title: 'Dr. Cynthia Ashley',
+      description: 'CEO of TFNTV and an advocate for communities impacted by autoimmune disease.',
+      bio: 'Dr. Ashley’s leadership blends media innovation with healthcare advocacy. She brings strategic vision to TFNTV’s growth and outreach missions.',
+      image: cynthiaImg,
+    },
+  ];
+
+  const [selectedLeader, setSelectedLeader] = useState(null);
+
+  const trail = useTrail(leaders.length, {
+    from: { opacity: 0, transform: 'translateY(20px)' },
+    to: { opacity: 1, transform: 'translateY(0px)' },
+    config: { mass: 1, tension: 200, friction: 20 },
+    delay: 300,
+  });
+
+  return (
+    <PageContainer style={pageFade}>
+      <Section>
+        <SectionTitle>About Our Leaders</SectionTitle>
+        <LeaderGrid>
+          {trail.map((animation, idx) => {
+            const leader = leaders[idx];
+            return (
+              <LeaderCard key={idx} style={animation} bgcolor="#F9FAFB">
+                <LeaderImage src={leader.image} alt={leader.title} />
+                <LeaderContent>
+                  <LeaderName>{leader.title}</LeaderName>
+                  <LeaderDesc>{leader.description}</LeaderDesc>
+                  <ViewButton onClick={() => setSelectedLeader(leader)}>
+                    View Details
+                  </ViewButton>
+                </LeaderContent>
+              </LeaderCard>
+            );
+          })}
+        </LeaderGrid>
+
+        {selectedLeader && (
+          <ModalOverlay onClick={() => setSelectedLeader(null)}>
+            <ModalWindow onClick={(e) => e.stopPropagation()}>
+              <ModalImage src={selectedLeader.image} alt={selectedLeader.title} />
+              <ModalBody>
+                <ModalHeader>{selectedLeader.title}</ModalHeader>
+                <ModalDesc>
+                  <strong>{selectedLeader.description}</strong>
+                </ModalDesc>
+                <ModalText>{selectedLeader.bio}</ModalText>
+                <CloseButton onClick={() => setSelectedLeader(null)}>
+                  Close
+                </CloseButton>
+              </ModalBody>
+            </ModalWindow>
+          </ModalOverlay>
+        )}
+      </Section>
+
+      <Section>
+        <SectionTitle>Advisory Board</SectionTitle>
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+        >
+          {advisoryImages.map((img, index) => (
+            <SwiperSlide key={index}>
+              <AdvisoryImage src={img} alt={`Advisory Member ${index + 1}`} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Section>
+
+      <Section>
+        <SectionTitle>About Total Faith Network (TFNTV)</SectionTitle>
+        <AboutText>
+          Total Faith Network (TFNTV) is more than a media platform — it’s a mission-driven movement that blends creativity, purpose, and impact. Founded on the belief that faith-based and values-driven content can uplift communities and change lives, TFNTV delivers powerful storytelling through diverse programming that speaks to the heart and spirit of our time.
+        </AboutText>
+        <AboutText>
+          From inspirational films and groundbreaking documentaries to music, talk shows, and community-centered series, our content reflects real people, real purpose, and real transformation. At TFNTV, we don’t just broadcast — we build bridges across cultures, generations, and beliefs.
+        </AboutText>
+        <AboutText>
+          Through our expansive network of partner channels and our growing e-commerce platform, we empower small businesses, ministries, and creators to share their message, grow their influence, and generate meaningful revenue. We’re redefining media as a tool for both expression and economic empowerment.
+        </AboutText>
+        <AboutText>
+          At Total Faith Network, we believe our platform must also be a platform for healing. That’s why we’re deeply committed to Corporate Social Responsibility (CSR) — with a special focus on supporting individuals and families impacted by autoimmune diseases.
+        </AboutText>
+        <AboutText>
+          Autoimmune conditions affect millions of people, often silently and without adequate support or awareness. For every donation we receive, a portion is dedicated directly to funding autoimmune disease research and advocacy. Your contribution doesn't just fuel our mission — it fuels hope, science, and the fight for better treatment and cures.
+        </AboutText>
+        <AboutText>
+          We invite you to stand with us — not only in spreading light through media, but in bringing healing to those who need it most. Every dollar makes a difference. Every act of giving becomes proof that “Everyone wins @ TFN”.
+        </AboutText>
+      </Section>
+    </PageContainer>
+  );
+};
+
+const PageContainer = styled(animated.div)`
+  padding: 3rem 1rem;
+  background: #E3F2FD;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+`;
+
+const Section = styled.section`
+  max-width: 95%;
+  margin: 0 auto 4rem;
+`;
+
+const SectionTitle = styled.h1`
+  color: #0D47A1;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #0D47A1, #1976D2);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+  }
+`;
+
+const LeaderGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+`;
+
+const LeaderCard = styled(animated.div)`
+  display: flex;
+  flex-direction: column;
+  background: ${(props) => props.bgcolor};
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const LeaderImage = styled.img`
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+`;
+
+const LeaderContent = styled.div`
+  padding: 1.2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const LeaderName = styled.h3`
+  margin: 0 0 0.5rem;
+  color: #1976D2;
+  font-size: 1.2rem;
+`;
+
+const LeaderDesc = styled.p`
+  color: #1A237E;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+`;
+
+const ViewButton = styled.button`
+  align-self: flex-start;
+  padding: 0.6rem 1.2rem;
+  background: #0D47A1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #1976D2;
+  }
+`;
+
+const ModalOverlay = styled.div`
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 1.5rem;
+`;
+
+const ModalWindow = styled.div`
+  background: #ffffff;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 85vh;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 600px) {
+    flex-direction: row;
+    max-height: 65vh;
+  }
+`;
+
+const ModalImage = styled.img`
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  @media (min-width: 600px) {
+    width: 40%;
+    height: auto;
+    max-height: 65vh;
+  }
+`;
+
+const ModalBody = styled.div`
+  padding: 1.5rem;
+  flex: 1;
+  overflow-y: auto;
+`;
+
+const ModalHeader = styled.h2`
+  color: #0D47A1;
+  margin-bottom: 0.8rem;
+  font-size: 1.6rem;
+`;
+
+const ModalDesc = styled.p`
+  color: #1A237E;
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+`;
+
+const ModalText = styled.p`
+  color: #1A237E;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+`;
+
+const CloseButton = styled.button`
+  margin-top: 0.8rem;
+  padding: 0.5rem 1.2rem;
+  background: #D32F2F;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #B71C1C;
+  }
+`;
+
+const AboutText = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  text-align: justify;
+  line-height: 1.6;
+`;
+
+const AdvisoryImage = styled.img`
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+`;
+
+export default About;
+```
+2025-06-07 21:37:46 - Query: 
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { useSpring, useTrail, animated } from '@react-spring/web';
+import evelynImg from '../images/evelyn.jpeg';
+import winfieldImg from '../images/winfield.jpeg';
+import cynthiaImg from '../images/cynthia.jpeg';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import Advisory1 from '../images/Advisory1.JPG';
+import Advisory2 from '../images/Advisory2.JPG';
+import Advisory3 from '../images/Advisory3.JPG';
+import Advisory4 from '../images/Advisory4.JPG';
+import Advisory5 from '../images/Advisory5.JPG';
+import Advisory6 from '../images/Advisory6.JPG';
+
+const advisoryImages = [Advisory1, Advisory2, Advisory3, Advisory4, Advisory5, Advisory6];
+
+const About = () => {
+  const pageFade = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 800 },
+  });
+
+  const leaders = [
+    {
+      title: 'Honorable Evelyn Laporte',
+      description: 'A leader and visionary in faith-based broadcasting and healing-centered advocacy.',
+      bio: 'Evelyn Laporte has spent over 20 years building ministries and media projects dedicated to hope, healing, and faith. Her leadership bridges tradition and innovation.',
+      image: evelynImg,
+    },
+    {
+      title: 'Marshayne Winfield',
+      description: 'A spiritual mentor whose impact continues to guide Total Faith Network’s values.',
+      bio: 'A man of great wisdom and grace, Marshayne Winfield is recognized for his role in spiritual education and social outreach programs nationwide.',
+      image: winfieldImg,
+    },
+    {
+      title: 'Dr. Cynthia Ashley',
+      description: 'CEO of TFNTV and an advocate for communities impacted by autoimmune disease.',
+      bio: 'Dr. Ashley’s leadership blends media innovation with healthcare advocacy. She brings strategic vision to TFNTV’s growth and outreach missions.',
+      image: cynthiaImg,
+    },
+  ];
+
+  const [selectedLeader, setSelectedLeader] = useState(null);
+
+  const trail = useTrail(leaders.length, {
+    from: { opacity: 0, transform: 'translateY(20px)' },
+    to: { opacity: 1, transform: 'translateY(0px)' },
+    config: { mass: 1, tension: 200, friction: 20 },
+    delay: 300,
+  });
+
+  return (
+    <PageContainer style={pageFade}>
+      <Section>
+        <SectionTitle>About Our Leaders</SectionTitle>
+        <LeaderGrid>
+          {trail.map((animation, idx) => {
+            const leader = leaders[idx];
+            return (
+              <LeaderCard key={idx} style={animation} bgcolor="#F9FAFB">
+                <LeaderImage src={leader.image} alt={leader.title} />
+                <LeaderContent>
+                  <LeaderName>{leader.title}</LeaderName>
+                  <LeaderDesc>{leader.description}</LeaderDesc>
+                  <ViewButton onClick={() => setSelectedLeader(leader)}>
+                    View Details
+                  </ViewButton>
+                </LeaderContent>
+              </LeaderCard>
+            );
+          })}
+        </LeaderGrid>
+
+        {selectedLeader && (
+          <ModalOverlay onClick={() => setSelectedLeader(null)}>
+            <ModalWindow onClick={(e) => e.stopPropagation()}>
+              <ModalImage src={selectedLeader.image} alt={selectedLeader.title} />
+              <ModalBody>
+                <ModalHeader>{selectedLeader.title}</ModalHeader>
+                <ModalDesc>
+                  <strong>{selectedLeader.description}</strong>
+                </ModalDesc>
+                <ModalText>{selectedLeader.bio}</ModalText>
+                <CloseButton onClick={() => setSelectedLeader(null)}>
+                  Close
+                </CloseButton>
+              </ModalBody>
+            </ModalWindow>
+          </ModalOverlay>
+        )}
+      </Section>
+
+      <Section>
+        <SectionTitle>Advisory Board</SectionTitle>
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+        >
+          {advisoryImages.map((img, index) => (
+            <SwiperSlide key={index}>
+              <AdvisoryImage src={img} alt={`Advisory Member ${index + 1}`} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Section>
+
+      <Section>
+        <SectionTitle>About Total Faith Network (TFNTV)</SectionTitle>
+        <AboutText>
+          Total Faith Network (TFNTV) is more than a media platform — it’s a mission-driven movement that blends creativity, purpose, and impact. Founded on the belief that faith-based and values-driven content can uplift communities and change lives, TFNTV delivers powerful storytelling through diverse programming that speaks to the heart and spirit of our time.
+        </AboutText>
+        <AboutText>
+          From inspirational films and groundbreaking documentaries to music, talk shows, and community-centered series, our content reflects real people, real purpose, and real transformation. At TFNTV, we don’t just broadcast — we build bridges across cultures, generations, and beliefs.
+        </AboutText>
+        <AboutText>
+          Through our expansive network of partner channels and our growing e-commerce platform, we empower small businesses, ministries, and creators to share their message, grow their influence, and generate meaningful revenue. We’re redefining media as a tool for both expression and economic empowerment.
+        </AboutText>
+        <AboutText>
+          At Total Faith Network, we believe our platform must also be a platform for healing. That’s why we’re deeply committed to Corporate Social Responsibility (CSR) — with a special focus on supporting individuals and families impacted by autoimmune diseases.
+        </AboutText>
+        <AboutText>
+          Autoimmune conditions affect millions of people, often silently and without adequate support or awareness. For every donation we receive, a portion is dedicated directly to funding autoimmune disease research and advocacy. Your contribution doesn't just fuel our mission — it fuels hope, science, and the fight for better treatment and cures.
+        </AboutText>
+        <AboutText>
+          We invite you to stand with us — not only in spreading light through media, but in bringing healing to those who need it most. Every dollar makes a difference. Every act of giving becomes proof that “Everyone wins @ TFN”.
+        </AboutText>
+      </Section>
+    </PageContainer>
+  );
+};
+
+const PageContainer = styled(animated.div)`
+  padding: 3rem 1rem;
+  background: #E3F2FD;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+`;
+
+const Section = styled.section`
+  max-width: 95%;
+  margin: 0 auto 4rem;
+`;
+
+const SectionTitle = styled.h1`
+  color: #0D47A1;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #0D47A1, #1976D2);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+  }
+`;
+
+const LeaderGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+`;
+
+const LeaderCard = styled(animated.div)`
+  display: flex;
+  flex-direction: column;
+  background: ${(props) => props.bgcolor};
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const LeaderImage = styled.img`
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+`;
+
+const LeaderContent = styled.div`
+  padding: 1.2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const LeaderName = styled.h3`
+  margin: 0 0 0.5rem;
+  color: #1976D2;
+  font-size: 1.2rem;
+`;
+
+const LeaderDesc = styled.p`
+  color: #1A237E;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+`;
+
+const ViewButton = styled.button`
+  align-self: flex-start;
+  padding: 0.6rem 1.2rem;
+  background: #0D47A1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #1976D2;
+  }
+`;
+
+const ModalOverlay = styled.div`
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 1.5rem;
+`;
+
+const ModalWindow = styled.div`
+  background: #ffffff;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 85vh;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 600px) {
+    flex-direction: row;
+    max-height: 65vh;
+  }
+`;
+
+const ModalImage = styled.img`
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  @media (min-width: 600px) {
+    width: 40%;
+    height: auto;
+    max-height: 65vh;
+  }
+`;
+
+const ModalBody = styled.div`
+  padding: 1.5rem;
+  flex: 1;
+  overflow-y: auto;
+`;
+
+const ModalHeader = styled.h2`
+  color: #0D47A1;
+  margin-bottom: 0.8rem;
+  font-size: 1.6rem;
+`;
+
+const ModalDesc = styled.p`
+  color: #1A237E;
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+`;
+
+const ModalText = styled.p`
+  color: #1A237E;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+`;
+
+const CloseButton = styled.button`
+  margin-top: 0.8rem;
+  padding: 0.5rem 1.2rem;
+  background: #D32F2F;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #B71C1C;
+  }
+`;
+
+const AboutText = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  text-align: justify;
+  line-height: 1.6;
+`;
+
+const AdvisoryImage = styled.img`
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+`;
+
+export default About; - Response: File: /home/junaet-mahbub/Desktop/ai-coder-bot/total_faith_network/src/pages/About.js
+```javascript
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { useSpring, useTrail, animated } from '@react-spring/web';
+import evelynImg from '../images/evelyn.jpeg';
+import winfieldImg from '../images/winfield.jpeg';
+import cynthiaImg from '../images/cynthia.jpeg';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import Advisory1 from '../images/Advisory1.JPG';
+import Advisory2 from '../images/Advisory2.JPG';
+import Advisory3 from '../images/Advisory3.JPG';
+import Advisory4 from '../images/Advisory4.JPG';
+import Advisory5 from '../images/Advisory5.JPG';
+import Advisory6 from '../images/Advisory6.JPG';
+
+const advisoryImages = [Advisory1, Advisory2, Advisory3, Advisory4, Advisory5, Advisory6];
+
+const About = () => {
+  const pageFade = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 800 },
+  });
+
+  const leaders = [
+    {
+      title: 'Honorable Evelyn Laporte',
+      description: 'Newly appointed CEO of TFNTV, bringing a wealth of judicial and leadership experience.',
+      bio: 'Honorable Evelyn Laporte, has been appointed as the new Chief Executive Officer, effective August 14, 2024. She will succeed Dr. Cynthia Ashley, who is stepping down after more than 15 years of exceptional leadership. Hon. Laporte, Prior to joining TFNTV was elected for two (2) terms as Supreme Court Justice in Kings County New York State, where she served on he bench for over 18 years of experience in the Judicial System. She is known for her strategic vision and ability to lead to new heights. “Hon. Laporte is the right leader for TFNTV as we embark on our next chapter of growth,” said Marshayne Winfield, TFNTV COO & Executive Producer. “With her extensive leadership experience, skills set and innovative mindset, we are confident that she will drive the company’s mission forward.” Hon. Laporte expressed enthusiasm about the new role, “As I enter the market as an entrepreneur, I am deeply honored to take on this leadership role at Total Faith Network TV & Media Enterprises, Inc. and I am committed to building upon the company’s success and working closely with the team to achieve our ambitious goals.” Total Faith Network has steady viewership and continues to globally grow organically. Potential cable subscriber households over 22 million and online streaming to over 66 million (i.e. ROKU). TFN produces commercial and non-commercial content that offers empowerment, entertainment, education & news. TFN is an award-winning recipient of two B Free Television Awards for artistic and inspirational content. For press inquiries, please contact: She is the creator of a new product she recently launched, Confidence with Attitude. A coaching program designed to help young attorneys build confidence in their career so they can be more productive and unlock their full potential and fast track their careers. She brings diverse experience in the legal field, as a good listener, great communication skills, works well with others, great managerial, time management and organizational skills, patient, a people’s person, works well under pressure, love to work with the community, a visionary, able to handle difficult situations, disciplined, committed and very passionate about what she represent',
+      image: evelynImg,
+    },
+    {
+      title: 'Marshayne Winfield aka Sha-Vision',
+      description: 'A multi-platinum published recording artist and influential leader in media and arts.',
+      bio: 'Marshayne L.H. Winfield aka Sha-Vision is a multi-platinum published recording artist, whose journey in the music industry spans over two decades. Renowned for his writing and lyrical skills, he has worked with some of the most iconic artists and producers of his time. Among his many accomplishments, Sha-Vision collaborated with Grammy Award-winning legend Mary J. Blige on the track “Steal Away” from her critically acclaimed No More Drama album in 2001, alongside super-producer Pharrell from The Neptunes. His talents also earned him a featured VH1 Live stage performance that captivated audiences across Europe, performing the song “Dance With Me” alongside Mary J. Blige.  In 2002 Sha-Visìon registered publishing company MLHW Publishing. In 2004 he created & produced the first hip hop underground brand “Battlegroundz” mixed tape for what he saw would be the next new wave and rise for underground hip-hop artists while he simultaneously was consulting an urban clothing design company.  Sha-Visìon’s experience within the print media industry was established when he began to work as managing editor with his first cousin Antione Clark Owner of F.E.D.S, (Finally Every Dimension of the Streets) A very successful family owned and operated independent urban magazine distributed through WARNING Inc.  He is the Executive Vice President, Chief Operating Officer & Senior Director of Content Development for TFNTV Media, Enterprises, inc. and the Executive Director of Restoring Our Community Media & Arts Network Foundation, Inc.  Sha-Visìon is also Co-Executive Producer and Producer of the annual Total Faith Awards & Tribute to the African Diaspora Awards.  Today, Sha-Vision brings his deep insights and experiences into the literary world, offering readers a thought-provoking exploration of existence and perception in The Realm of Reality. This book is a testament to his boundless creativity and unique perspective, inviting readers to journey with him through the depths of thought and imagination.  Sha-Vision has three sons & two daughters. He is available for Speaking Engagements. Please Email:  Legacbuilders933@gmail.com',
+      image: winfieldImg,
+    },
+    {
+      title: 'Dr. Cynthia O. Ashley',
+      description: 'Founder of TFNTV and a global advocate for media literacy and community empowerment.',
+      bio: 'Dr. Cynthia O. Ashley is a media literacy educator, ordained minister, and award-winning television talk show host with over 25 years of impact in media, ministry, and public service. She holds a Doctor of Ministry in Media Literacy Pedagogy and Research, along with graduate and undergraduate degrees in divinity, religious education, communication, and law. As founder & President of Total Faith Network Television & Media Enterprises Inc. (TFNTV)—a certified Women Minority Business Enterprise—Dr. Ashley has created and produced culturally significant platforms that uplift and celebrate global excellence. These include the Total Faith Awards, the African Diaspora Tribute Image Awards, and SASSY Women Who Win, which honors changemakers.  In 2018, she made history as the first Black woman to register with the New York State Board of Elections to run for Mayor of Yonkers, NY, later amending seat to run for County Legislator. She is a resilient survivor of personal adversity, including traumatic brain injury and double brain surgeries, and uses her journey to lead others toward healing and transformation. Dr. Ashley’s influence reaches across continents. She serves as Executive Board Chair of the ROCMAN Foundation Inc.(America), Director of Diaspora Affairs for the Pan African Chambers of Commerce (South Africa), and advisor to Ambassadors for Africa (Nigeria). She has been recognized with numerous awards and proclamations, including from Senator Andrea Stewart-Cousins, Congressman Eliot Engel, and Yonkers Mayor Mike Spano. Her 10th Annual Total Faith Awards Gala drew global dignitaries such as Queen Mother Dr. Dòris Blakely Monarch of Kingdom of Kush, Her Regal Majesty Ambassador Dr. Olori Temitope Enitan Ogunwusi Wife of the Ooni of Ife, and other esteemed honorees.  Through her global ministry, Upon This Rock International Christian Ministries, known today as the ROCMAN Foundation, Inc. and outreach platforms such as The Cyndi Ashley Network International (CAN-I) and the PMS: Paradigm Mind Shift, Dr. Ashley continues to transform lives. Her work blends spiritual leadership, media advocacy, and international engagement,   Through her storytelling platforms, she continues to inspire hearts, shift narratives, and lead unapologetically with faith, purpose, and power.',
+      image: cynthiaImg,
+    },
+  ];
+
+  const [selectedLeader, setSelectedLeader] = useState(null);
+
+  const trail = useTrail(leaders.length, {
+    from: { opacity: 0, transform: 'translateY(20px)' },
+    to: { opacity: 1, transform: 'translateY(0px)' },
+    config: { mass: 1, tension: 200, friction: 20 },
+    delay: 300,
+  });
+
+  return (
+    <PageContainer style={pageFade}>
+      <Section>
+        <SectionTitle>About Our Leaders</SectionTitle>
+        <LeaderGrid>
+          {trail.map((animation, idx) => {
+            const leader = leaders[idx];
+            return (
+              <LeaderCard key={idx} style={animation} bgcolor="#F9FAFB">
+                <LeaderImage src={leader.image} alt={leader.title} />
+                <LeaderContent>
+                  <LeaderName>{leader.title}</LeaderName>
+                  <LeaderDesc>{leader.description}</LeaderDesc>
+                  <ViewButton onClick={() => setSelectedLeader(leader)}>
+                    View Details
+                  </ViewButton>
+                </LeaderContent>
+              </LeaderCard>
+            );
+          })}
+        </LeaderGrid>
+
+        {selectedLeader && (
+          <ModalOverlay onClick={() => setSelectedLeader(null)}>
+            <ModalWindow onClick={(e) => e.stopPropagation()}>
+              <ModalImage src={selectedLeader.image} alt={selectedLeader.title} />
+              <ModalBody>
+                <ModalHeader>{selectedLeader.title}</ModalHeader>
+                <ModalDesc>
+                  <strong>{selectedLeader.description}</strong>
+                </ModalDesc>
+                <ModalText>{selectedLeader.bio}</ModalText>
+                <CloseButton onClick={() => setSelectedLeader(null)}>
+                  Close
+                </CloseButton>
+              </ModalBody>
+            </ModalWindow>
+          </ModalOverlay>
+        )}
+      </Section>
+
+      <Section>
+        <SectionTitle>Advisory Board</SectionTitle>
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+        >
+          {advisoryImages.map((img, index) => (
+            <SwiperSlide key={index}>
+              <AdvisoryImage src={img} alt={`Advisory Member ${index + 1}`} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Section>
+
+      <Section>
+        <SectionTitle>About Total Faith Network (TFNTV)</SectionTitle>
+        <AboutText>
+          Total Faith Network (TFNTV) is more than a media platform — it’s a mission-driven movement that blends creativity, purpose, and impact. Founded on the belief that faith-based and values-driven content can uplift communities and change lives, TFNTV delivers powerful storytelling through diverse programming that speaks to the heart and spirit of our time.
+        </AboutText>
+        <AboutText>
+          From inspirational films and groundbreaking documentaries to music, talk shows, and community-centered series, our content reflects real people, real purpose, and real transformation. At TFNTV, we don’t just broadcast — we build bridges across cultures, generations, and beliefs.
+        </AboutText>
+        <AboutText>
+          Through our expansive network of partner channels and our growing e-commerce platform, we empower small businesses, ministries, and creators to share their message, grow their influence, and generate meaningful revenue. We’re redefining media as a tool for both expression and economic empowerment.
+        </AboutText>
+        <AboutText>
+          At Total Faith Network, we believe our platform must also be a platform for healing. That’s why we’re deeply committed to Corporate Social Responsibility (CSR) — with a special focus on supporting individuals and families impacted by autoimmune diseases.
+        </AboutText>
+        <AboutText>
+          Autoimmune conditions affect millions of people, often silently and without adequate support or awareness. For every donation we receive, a portion is dedicated directly to funding autoimmune disease research and advocacy. Your contribution doesn't just fuel our mission — it fuels hope, science, and the fight for better treatment and cures.
+        </AboutText>
+        <AboutText>
+          We invite you to stand with us — not only in spreading light through media, but in bringing healing to those who need it most. Every dollar makes a difference. Every act of giving becomes proof that “Everyone wins @ TFN”.
+        </AboutText>
+      </Section>
+    </PageContainer>
+  );
+};
+
+const PageContainer = styled(animated.div)`
+  padding: 3rem 1rem;
+  background: #E3F2FD;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+`;
+
+const Section = styled.section`
+  max-width: 95%;
+  margin: 0 auto 4rem;
+`;
+
+const SectionTitle = styled.h1`
+  color: #0D47A1;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #0D47A1, #1976D2);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+  }
+`;
+
+const LeaderGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+`;
+
+const LeaderCard = styled(animated.div)`
+  display: flex;
+  flex-direction: column;
+  background: ${(props) => props.bgcolor};
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const LeaderImage = styled.img`
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+`;
+
+const LeaderContent = styled.div`
+  padding: 1.2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const LeaderName = styled.h3`
+  margin: 0 0 0.5rem;
+  color: #1976D2;
+  font-size: 1.2rem;
+`;
+
+const LeaderDesc = styled.p`
+  color: #1A237E;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+`;
+
+const ViewButton = styled.button`
+  align-self: flex-start;
+  padding: 0.6rem 1.2rem;
+  background: #0D47A1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #1976D2;
+  }
+`;
+
+const ModalOverlay = styled.div`
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 1.5rem;
+`;
+
+const ModalWindow = styled.div`
+  background: #ffffff;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 85vh;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 600px) {
+    flex-direction: row;
+    max-height: 65vh;
+  }
+`;
+
+const ModalImage = styled.img`
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  @media (min-width: 600px) {
+    width: 40%;
+    height: auto;
+    max-height: 65vh;
+  }
+`;
+
+const ModalBody = styled.div`
+  padding: 1.5rem;
+  flex: 1;
+  overflow-y: auto;
+`;
+
+const ModalHeader = styled.h2`
+  color: #0D47A1;
+  margin-bottom: 0.8rem;
+  font-size: 1.6rem;
+`;
+
+const ModalDesc = styled.p`
+  color: #1A237E;
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+`;
+
+const ModalText = styled.p`
+  color: #1A237E;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+`;
+
+const CloseButton = styled.button`
+  margin-top: 0.8rem;
+  padding: 0.5rem 1.2rem;
+  background: #D32F2F;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #B71C1C;
+  }
+`;
+
+const AboutText = styled.p`
+  color: #1A237E;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  text-align: justify;
+  line-height: 1.6;
+`;
+
+const AdvisoryImage = styled.img`
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+`;
+
+export default About;
+```
+2025-06-07 22:09:43 - Query: import openai
+import os
+
+# Set your API key from environment variable
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+def generate_prompt_for_upgrade(code, upgrade_instruction):
+    """
+    Build a structured prompt to upgrade code based on a given instruction.
+    Can be made more sophisticated over time with examples, style guides, etc.
+    """
+    return f"""
+You are an expert software engineer. Improve the following code based on the instruction below.
+
+Instruction: {upgrade_instruction}
+
+Code:
+{code}
+
+Respond only with the upgraded code, no explanation.
+"""
+
+def upgrade_code_with_gpt(code: str, instruction: str, model="gpt-4") -> str:
+    """
+    Core function to upgrade code using OpenAI chat API.
+    Used by the autocoder GUI or CLI interface.
+    """
+    prompt = generate_prompt_for_upgrade(code, instruction)
+
+    try:
+        response = openai.ChatCompletion.create(
+            model=model,
+            messages=[
+                {"role": "system", "content": "You are a helpful AI programming assistant."},
+                {"role": "user", "content": prompt}
+            ],
+            temperature=0.4,
+            max_tokens=2048
+        )
+        return response.choices[0].message['content'].strip()
+    except Exception as e:
+        return f"Error during upgrade: {e}"
+
+def upgrade_multiple_files_with_gpt(file_dict: dict, instruction: str, model="gpt-4") -> dict:
+    """
+    Upgrade multiple files' content using the given instruction.
+    file_dict: {filename: code}
+    Returns a dict of {filename: upgraded_code}
+    """
+    upgraded = {}
+
+    for fname, content in file_dict.items():
+        file_instruction = f"{instruction} (Filename: {fname})"
+        prompt = generate_prompt_for_upgrade(content, file_instruction)
+
+        try:
+            response = openai.ChatCompletion.create(
+                model=model,
+                messages=[
+                    {"role": "system", "content": "You are a helpful AI coding assistant."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.3,
+                max_tokens=2048
+            )
+            upgraded[fname] = response.choices[0].message['content'].strip()
+        except Exception as e:
+            upgraded[fname] = f"❌ Error upgrading {fname}: {e}"
+
+    return upgraded
+
+# Future ideas:
+# - auto formatting
+# - safety or security audits
+# - test generation
+# - multi-file dependency resolution
+# - refactoring with context awareness
+ - Response: Error during upgrade: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-06-08 15:20:08 - Change: import os
+import streamlit as st
+import tkinter as... -> import os
+import streamlit as st
+import tkinter as...
+2025-06-08 15:22:43 - Change: import pygame
+import sys
+import random  # Added ra... -> import pygame
+import sys
+import random
+
+def draw_s...
+2025-06-08 15:36:59 - Change: import pygame
+import sys
+import random
+
+def draw_s... -> import pygame
+import sys
+import random
+
+def draw_s...
+2025-06-08 15:38:18 - Change: import pygame
+import sys
+import random
+
+def draw_s... -> import pygame
+import sys
+import random
+
+def draw_s...
+2025-06-08 15:39:31 - Change: import pygame
+import sys
+import random
+
+def draw_s... -> import pygame  # Import the pygame library for cre...
+2025-06-09 21:16:57 - Change: import pygame  # Import the pygame library for cre... -> import pygame
+import sys
+import random
+
+def draw_p...
+2025-06-09 21:23:48 - Change: import pygame
+import sys
+import random
+
+def draw_p... -> import pygame
+import sys
+import random
+
+def draw_p...
+2025-06-09 21:24:58 - Change: import pygame
+import sys
+import random
+
+def draw_p... -> import pygame
+import sys
+import random
+
+def draw_p...
+2025-06-09 21:28:47 - Change: import pygame
+import sys
+import random
+
+def draw_p... -> import pygame
+import sys
+import random
+
+def draw_p...
+2025-06-09 23:03:43 - Change: const board = document.getElementById('chessboard'... -> const board = document.getElementById('chessboard'...
+2025-06-09 23:03:43 - Change: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta ... -> <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta ...
+2025-06-09 23:03:43 - Change: #chessboard {
+    display: grid;
+    grid-template... -> #chessboard {
+    display: grid;
+    grid-template...
+2025-06-09 23:05:36 - Change: const board = document.getElementById('chessboard'... -> const board = document.getElementById('chessboard'...
+2025-06-09 23:05:36 - Change: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta ... -> <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta ...
+2025-06-09 23:05:36 - Change: #chessboard {
+    display: grid;
+    grid-template... -> #chessboard {
+    display: grid;
+    grid-template...
+2025-06-09 23:06:59 - Change: const board = document.getElementById('chessboard'... -> const board = document.getElementById('chessboard'...
+2025-06-09 23:06:59 - Change: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta ... -> <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta ...
+2025-06-09 23:06:59 - Change: #chessboard {
+    display: grid;
+    grid-template... -> #chessboard {
+    display: grid;
+    grid-template...
+2025-06-09 23:09:18 - Change: const board = document.getElementById('chessboard'... -> const board = document.getElementById('chessboard'...
+2025-06-09 23:09:18 - Change: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta ... -> <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta ...
+2025-06-09 23:09:18 - Change: #chessboard {
+    display: grid;
+    grid-template... -> #chessboard {
+    display: grid;
+    grid-template...

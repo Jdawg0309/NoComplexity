@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>House MD™ Caption Diagnoser</title>
+  <style>
+    /* Page styling */
+    body {
+      background: #111;
+      color: #9fddff;
+      font-family: monospace;
+      padding: 1rem;
+    }
+    button {
+      background: #222;
+      border: 1px solid #9fddff;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+    #report {
+      white-space: pre-wrap;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <h1>House MD™ Caption Diagnoser</h1>
+
+  <!-- 1) Embed the YouTube video with captions turned on and JS API enabled -->
+  <iframe
+    id="ytplayer"
+    width="640" height="360"
+    src="https://www.youtube.com/embed/VIDEO_ID?cc_load_policy=1&enablejsapi=1"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+
+  <!-- Trigger button -->
+  <div>
+    <button id="run">Run Diagnosis</button>
+  </div>
+
+  <!-- Output area -->
+  <div id="report">Press “Run Diagnosis” to start.</div>
+
+  <!-- Load YouTube IFrame API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    let player;
+
+    /**
+     * onYouTubeIframeAPIReady
+     * -----------------------
+     * Called automatically by YouTube’s IFrame API once it loads.
+     * This initializes the `player` object so we can later interact
+     * with the embedded video if needed.
+     */
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('ytplayer');
+    }
+
+    /**
+     * getCaptions
+     * -----------
+     * Grabs all visible caption segments that YouTube has injected
+     * into the player DOM, joins them into one string, and returns it.
+     *
+     * @returns {string} The concatenated caption text.
+     */
+    function getCaptions() {
+      // `.ytp-caption-segment` is the class YouTube uses for each caption block
+      const segments = document.querySelectorAll('.ytp-caption-segment');
+      return Array.from(segments)
+                  .map(s => s.innerText)
+                  .join(' ');
+    }
+
+    /**
+     * computeWER
+     * ----------
+     * Computes Word Error Rate (WER) between a reference string and
+     * a hypothesis string. WER = (substitutions + deletions + insertions) / # words in ref.
+     *
+     * @param {string} ref The reference transcript (your captions).
+     * @param {string} hyp The hypothesis transcript (speech engine result).
+     * @returns {number} The WER as a fraction (0.0 = perfect, 1.0 = all wrong).
+     */
+    function computeWER(ref, hyp) {
+      const r = ref.split(' ');
+      const h = hyp.split(' ');
+      // Create DP table of size (r.length+1)x(h.length+1)
+      const d = Array(r.length + 1).fill(null).map(() => Array(h.length + 1).fill(0));
+
+      // Base cases: all deletions or all insertions
+      for (let i = 1; i <= r.length; i++) d[i][0] = i;
+      for (let j = 1; j <= h.length; j++) d[0][j] = j;
+
+      // Fill DP table
+      for (let i = 1; i <= r.length; i++) {
+        for (let j = 1; j <= h.length; j++) {
+          const cost = r[i - 1] === h[j - 1] ? 0 : 1;
+          d[i][j] = Math.min(
+            d[i - 1][j] + 1,      // deletion
+            d[i][j - 1] + 1,      // insertion
+            d[i - 1][j - 1] + cost // substitution
+          );
+        }
+      }
+
+      // WER = edit distance / number of words in reference
+      return d[r.length][h.length] / r.length;
+    }
+
+    /**
+     * transcribe
+     * ----------
+     * Uses the Web Speech API to “listen” through your microphone
+     * and return the transcript of whatever it hears. Note: your
+     * speakers must be playing the YouTube audio loudly enough!
+     *
+     * @returns {Promise<string>} Resolves to the recognized transcript.
+     * @throws {string} If SpeechRecognition is unsupported or an error occurs.
+     */
+    function transcribe() {
+      return new Promise((resolve, reject) => {
+        const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!SR) {
+          reject('SpeechRecognition API unsupported');
+          return;
+        }
+        const recog = new SR();
+        recog.lang = 'en-US';
+        recog.interimResults = false;
+        recog.maxAlternatives = 1;
+
+        // When we get a result, resolve the promise
+        recog.onresult = (e) => {
+          resolve(e.results[0][0].transcript);
+        };
+
+        // On error, reject with the error message
+        recog.onerror = (e) => {
+          reject(e.error);
+        };
+
+        // Start listening
+        recog.start();
+      });
+    }
+
+    // Attach click handler to the “Run Diagnosis” button
+    document.getElementById('run').onclick = async () => {
+      const rpt = document.getElementById('report');
+      rpt.textContent = '🩺 Dr. House is listening…';
+
+      try {
+        // 1) Pull captions from YouTube player DOM
+        const captions = getCaptions();
+        if (!captions) {
+          throw new Error('No captions visible—make sure “CC” is on!');
+        }
+
+        // 2) Perform speech-to-text on the audio
+        const transcript = await transcribe();
+
+        // 3) Calculate WER and convert to accuracy percentage
+        const wer = computeWER(captions, transcript);
+        const accuracy = ((1 - wer) * 100).toFixed(1);
+
+        // 4) Display the mini‐report
+        rpt.textContent =
+          `📋 Captions: ${captions.slice(0, 50)}…\n` +
+          `🎙 Transcript: ${transcript.slice(0, 50)}…\n` +
+          `🔍 Accuracy: ${accuracy}%\n` +
+          `🩸 “It’s never lupus… but those captions? Almost.”`;
+      } catch (err) {
+        // Show any error as a failed diagnosis
+        rpt.textContent = `❗️ Diagnosis failed: ${err.message || err}`;
+      }
+    };
+  </script>
+</body>
+</html>
