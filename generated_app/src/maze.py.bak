@@ -1,0 +1,16 @@
+import pygame
+
+class Maze:
+    def __init__(self, game):
+        self.screen = game.screen
+        self.settings = game.settings
+        # Assume maze is drawn from a static image
+        self.image = pygame.image.load('assets/maze.png')
+        self.rect = self.image.get_rect()
+
+    def draw(self):
+        self.screen.blit(self.image, self.rect)
+```
+
+### 5. Ghost Class
+```python

@@ -1,0 +1,29 @@
+import pygame
+
+class Pacman:
+    def __init__(self, game):
+        self.screen = game.screen
+        self.settings = game.settings
+        self.image = pygame.image.load('assets/pacman.png')
+        self.rect = self.image.get_rect()
+
+    def check_events(self, event):
+        if event.key == pygame.K_RIGHT:
+            self.rect.x += 10
+        elif event.key == pygame.K_LEFT:
+            self.rect.x -= 10
+        elif event.key == pygame.K_UP:
+            self.rect.y -= 10
+        elif event.key == pygame.K_DOWN:
+            self.rect.y += 10
+
+    def update(self):
+        # Update pacman position here
+        pass
+
+    def draw(self):
+        self.screen.blit(self.image, self.rect)
+```
+
+### 4. Maze Class
+```python

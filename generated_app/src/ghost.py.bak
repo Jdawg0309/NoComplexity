@@ -1,0 +1,19 @@
+import pygame
+
+class Ghost:
+    def __init__(self, game, name):
+        self.screen = game.screen
+        self.settings = game.settings
+        self.name = name
+        self.image = pygame.image.load(f'assets/{name}.png')
+        self.rect = self.image.get_rect()
+
+    def update(self):
+        # Update ghost movement here
+        pass
+
+    def draw(self):
+        self.screen.blit(self.image, self.rect)
+```
+
+This setup provides a basic structure for a Pac-Man game, with placeholders for assets and further logic to be implemented as needed.
